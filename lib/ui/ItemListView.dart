@@ -27,7 +27,7 @@ class _ItemListViewState extends State<ItemListView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.region.toString()),
+        title: Text(ItemHelper.getRegionName(widget.region)!),
 
       ),
       body: ValueListenableBuilder<Box<Items>>(
