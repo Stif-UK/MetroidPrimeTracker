@@ -51,7 +51,7 @@ class _ItemListViewState extends State<ItemListView> {
 
                 return CheckboxListTile(
                   title: Text(currentItem!.room),
-                    subtitle: Text(currentItem.type.toString()),
+                    subtitle: Text(ItemHelper.getUpgradeTypeName(currentItem.type)!),
                     controlAffinity: ListTileControlAffinity.leading,
                     value: currentItem.collected,
                     secondary: ItemHelper.getItemTypeIcon(currentItem.type),

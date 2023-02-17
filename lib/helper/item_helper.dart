@@ -107,6 +107,45 @@ class ItemHelper{
     return returnString;
   }
 
+  static String? getUpgradeTypeName(String type){
+    String returnString;
+
+    switch (type) {
+      case "ItemTypeEnum.upgrade":
+        {
+          returnString = "Upgrade";
+        }
+        break;
+      case "ItemTypeEnum.missile_expansion":
+        {
+          returnString = "Missile Expansion";
+        }
+        break;
+      case "ItemTypeEnum.power_bomb_upgrade":
+        {
+          returnString = "Power Bomb Upgrade";
+        }
+        break;
+      case "ItemTypeEnum.energy_tank":
+        {
+          returnString = "Energy Tank";
+        }
+        break;
+      case "ItemTypeEnum.artefact":
+        {
+          returnString = "Artefact";
+        }
+        break;
+
+      default:
+        {
+          returnString = "";
+        }
+    }
+    return returnString;
+  }
+
+
   static generateItems(){
     print("starting to generate items");
 
