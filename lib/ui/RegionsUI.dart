@@ -57,9 +57,7 @@ class _RegionsUIState extends State<RegionsUI> {
         Align(
           alignment: Alignment.center,
           child: ElevatedButton(
-              onPressed: (){},
-              //onPressed: (){ Get.to(() => WearStats());},
-              style: ButtonStyle(
+              onPressed: (){ Get.to(() =>  const ItemListView(region: RegionEnum.chozo_ruins));},              style: ButtonStyle(
                   shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                       RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(20.0),
@@ -94,9 +92,7 @@ class _RegionsUIState extends State<RegionsUI> {
         Align(
           alignment: Alignment.center,
           child: ElevatedButton(
-              onPressed: (){},
-              //onPressed: (){ Get.to(() => WearStats());},
-              style: ButtonStyle(
+              onPressed: (){ Get.to(() =>  const ItemListView(region: RegionEnum.magmoor_caverns));},              style: ButtonStyle(
                   shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                       RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(20.0),
@@ -132,8 +128,7 @@ class _RegionsUIState extends State<RegionsUI> {
         Align(
           alignment: Alignment.center,
           child: ElevatedButton(
-              onPressed: (){},
-              //onPressed: (){ Get.to(() => WearStats());},
+              onPressed: (){ Get.to(() =>  const ItemListView(region: RegionEnum.phendrana_drifts));},
               style: ButtonStyle(
                   shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                       RoundedRectangleBorder(
@@ -170,8 +165,7 @@ class _RegionsUIState extends State<RegionsUI> {
         Align(
           alignment: Alignment.center,
           child: ElevatedButton(
-              onPressed: (){},
-              //onPressed: (){ Get.to(() => WearStats());},
+              onPressed: (){ Get.to(() =>  const ItemListView(region: RegionEnum.phazon_mines));},
               style: ButtonStyle(
                   shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                       RoundedRectangleBorder(
