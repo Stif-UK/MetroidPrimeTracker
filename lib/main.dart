@@ -15,8 +15,9 @@ void main() async {
   print("opening box in main");
   await Hive.openBox<Items>("ItemBox");
 
-  print("populating box");
+  print("checking if box needs populated");
   if(Hive.box<Items>("ItemBox").isEmpty){
+    print("populating box");
     ItemHelper.generateItems();
   }
 

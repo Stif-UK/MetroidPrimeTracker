@@ -2,10 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:metroid_prime_items/helper/item_helper.dart';
+import 'package:metroid_prime_items/model/enums/item_type_enum.dart';
+import 'package:metroid_prime_items/model/enums/region_enum.dart';
 import 'package:metroid_prime_items/model/itemsmodel.dart';
 
 class ItemListView extends StatefulWidget {
-  const ItemListView({Key? key}) : super(key: key);
+  //const ItemListView({Key? key}) : super(key: key);
+
+  //final String title;
+  final RegionEnum region;
+
+  const ItemListView({super.key, required this.region});
+
 
   @override
   State<ItemListView> createState() => _ItemListViewState();
@@ -19,7 +27,7 @@ class _ItemListViewState extends State<ItemListView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("ItemList"),
+        title: Text(widget.region.toString()),
 
       ),
       body: ValueListenableBuilder<Box<Items>>(
@@ -50,6 +58,7 @@ class _ItemListViewState extends State<ItemListView> {
                     onChanged: (bool? value){
                     setState(() {
                       currentItem.collected = value!;
+                      currentItem.save();
                     });
                     });
               },

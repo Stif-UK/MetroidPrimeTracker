@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:metroid_prime_items/model/enums/region_enum.dart';
 import 'package:metroid_prime_items/ui/ItemListView.dart';
 
 class RegionsUI extends StatefulWidget {
@@ -20,7 +21,7 @@ class _RegionsUIState extends State<RegionsUI> {
         Align(
           alignment: Alignment.center,
           child: ElevatedButton(
-              onPressed: (){ Get.to(() => const ItemListView());},
+              onPressed: (){ Get.to(() =>  const ItemListView(region: RegionEnum.tallon_overworld));},
               style: ButtonStyle(
                   shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                       RoundedRectangleBorder(
