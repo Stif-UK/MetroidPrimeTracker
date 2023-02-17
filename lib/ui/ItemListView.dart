@@ -20,7 +20,7 @@ class ItemListView extends StatefulWidget {
 }
 
 class _ItemListViewState extends State<ItemListView> {
-
+  
   final itemBox = Hive.box<Items>("ItemBox");
 
   @override
@@ -33,20 +33,20 @@ class _ItemListViewState extends State<ItemListView> {
       body: ValueListenableBuilder<Box<Items>>(
           valueListenable: itemBox.listenable(),
           builder: (context, box, _){
-            //List<Items> filteredList = Boxes.getCollectionWatches();
+            List<Items> filteredList = itemBox.values.where((item) => item.region == widget.region.toString()).toList();
 
 
 
-            return itemBox.isEmpty?Container(
+            return filteredList.isEmpty?Container(
               alignment: Alignment.center,
               child: const Text("Something's gone wrong! No items found!\n",
                 textAlign: TextAlign.center,),
             ):
 
             ListView.separated(
-              itemCount: itemBox.length,
+              itemCount: filteredList.length,
               itemBuilder: (BuildContext context, int index){
-                var currentItem = itemBox.getAt(index);
+                var currentItem = filteredList.elementAt(index);
 
 
                 return CheckboxListTile(
