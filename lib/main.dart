@@ -12,11 +12,13 @@ void main() async {
   await Hive.initFlutter();
 
   Hive.registerAdapter(ItemsAdapter());
+  print("opening box in main");
   await Hive.openBox<Items>("ItemBox");
 
-  // if(Hive.box("ItemBox").isEmpty){
-  //   ItemHelper.generateItems();
-  // }
+  print("populating box");
+  if(Hive.box<Items>("ItemBox").isEmpty){
+    ItemHelper.generateItems();
+  }
 
   runApp(GetMaterialApp(
     debugShowCheckedModeBanner: false,
