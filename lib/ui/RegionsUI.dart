@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:metroid_prime_items/ui/ItemListView.dart';
 
 class RegionsUI extends StatefulWidget {
   const RegionsUI({Key? key}) : super(key: key);
@@ -18,8 +20,7 @@ class _RegionsUIState extends State<RegionsUI> {
         Align(
           alignment: Alignment.center,
           child: ElevatedButton(
-              onPressed: (){},
-              //onPressed: (){ Get.to(() => WearStats());},
+              onPressed: (){ Get.to(() => const ItemListView());},
               style: ButtonStyle(
                   shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                       RoundedRectangleBorder(
