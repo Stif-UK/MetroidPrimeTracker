@@ -167,6 +167,43 @@ class ItemHelper{
     ItemHelper.addItem("Artifact of Chozo", RegionEnum.tallon_overworld, "Life Grove", ItemTypeEnum.artefact);
 
     //Chozo Ruins
+    ItemHelper.addItem("Missile Launcher", RegionEnum.chozo_ruins, "Hive Totem", ItemTypeEnum.upgrade);
+    ItemHelper.addItem("Morph Ball", RegionEnum.chozo_ruins, "Ruined Shrine", ItemTypeEnum.upgrade);
+    ItemHelper.addItem("Varia Suit", RegionEnum.chozo_ruins, "SunChamber", ItemTypeEnum.upgrade);
+    ItemHelper.addItem("Charge Beam", RegionEnum.chozo_ruins, "Watery Hall", ItemTypeEnum.upgrade);
+    ItemHelper.addItem("Morph Ball Bomb", RegionEnum.chozo_ruins, "Burn Dome", ItemTypeEnum.upgrade);
+    ItemHelper.addItem("Ice Beam", RegionEnum.chozo_ruins, "Antechamber", ItemTypeEnum.upgrade);
+    ItemHelper.addItem("Wavebuster", RegionEnum.chozo_ruins, "Tower of Light", ItemTypeEnum.upgrade);
+    ItemHelper.addItem("Missile Expansion", RegionEnum.chozo_ruins, "Main Plaza", ItemTypeEnum.missile_expansion);
+    ItemHelper.addItem("Missile Expansion", RegionEnum.chozo_ruins, "Main Plaza", ItemTypeEnum.missile_expansion);
+    ItemHelper.addItem("Missile Expansion", RegionEnum.chozo_ruins, "Main Plaza", ItemTypeEnum.missile_expansion);
+    ItemHelper.addItem("Missile Expansion", RegionEnum.chozo_ruins, "Ruined Nursery", ItemTypeEnum.missile_expansion);
+    ItemHelper.addItem("Missile Expansion", RegionEnum.chozo_ruins, "Ruined Gallery", ItemTypeEnum.missile_expansion);
+    ItemHelper.addItem("Missile Expansion", RegionEnum.chozo_ruins, "Ruined Gallery", ItemTypeEnum.missile_expansion);
+    ItemHelper.addItem("Missile Expansion", RegionEnum.chozo_ruins, "Ruined Shrine", ItemTypeEnum.missile_expansion);
+    ItemHelper.addItem("Missile Expansion", RegionEnum.chozo_ruins, "Ruined Shrine", ItemTypeEnum.missile_expansion);
+    ItemHelper.addItem("Missile Expansion", RegionEnum.chozo_ruins, "Vault", ItemTypeEnum.missile_expansion);
+    ItemHelper.addItem("Missile Expansion", RegionEnum.chozo_ruins, "Ruined Fountain", ItemTypeEnum.missile_expansion);
+    ItemHelper.addItem("Missile Expansion", RegionEnum.chozo_ruins, "Gathering Hall", ItemTypeEnum.missile_expansion);
+    ItemHelper.addItem("Missile Expansion", RegionEnum.chozo_ruins, "Watery Hall Access", ItemTypeEnum.missile_expansion);
+    ItemHelper.addItem("Missile Expansion", RegionEnum.chozo_ruins, "Watery Hall", ItemTypeEnum.missile_expansion);
+    ItemHelper.addItem("Missile Expansion", RegionEnum.chozo_ruins, "Burn Dome", ItemTypeEnum.missile_expansion);
+    ItemHelper.addItem("Missile Expansion", RegionEnum.chozo_ruins, "Furnace", ItemTypeEnum.missile_expansion);
+    ItemHelper.addItem("Missile Expansion", RegionEnum.chozo_ruins, "Dynamo", ItemTypeEnum.missile_expansion);
+    ItemHelper.addItem("Missile Expansion", RegionEnum.chozo_ruins, "Dynamo", ItemTypeEnum.missile_expansion);
+    ItemHelper.addItem("Missile Expansion", RegionEnum.chozo_ruins, "Crossway", ItemTypeEnum.missile_expansion);
+    ItemHelper.addItem("Missile Expansion", RegionEnum.chozo_ruins, "Training Chamber Access", ItemTypeEnum.missile_expansion);
+    ItemHelper.addItem("Power Bomb Upgrade", RegionEnum.chozo_ruins, "Magma Pool", ItemTypeEnum.power_bomb_upgrade);
+    ItemHelper.addItem("Energy Tank", RegionEnum.chozo_ruins, "Main Plaza", ItemTypeEnum.energy_tank);
+    ItemHelper.addItem("Energy Tank", RegionEnum.chozo_ruins, "Transport Access North", ItemTypeEnum.energy_tank);
+    ItemHelper.addItem("Energy Tank", RegionEnum.chozo_ruins, "Furnace", ItemTypeEnum.energy_tank);
+    ItemHelper.addItem("Energy Tank", RegionEnum.chozo_ruins, "Hall of the Elders", ItemTypeEnum.energy_tank);
+    ItemHelper.addItem("Energy Tank", RegionEnum.chozo_ruins, "Training Chamber", ItemTypeEnum.energy_tank);
+    ItemHelper.addItem("Artifact of Lifegiver", RegionEnum.chozo_ruins, "Tower Chamber", ItemTypeEnum.artefact);
+    ItemHelper.addItem("Artifact of Wild", RegionEnum.chozo_ruins, "Sunchamber", ItemTypeEnum.artefact);
+    ItemHelper.addItem("Artifact of World", RegionEnum.chozo_ruins, "Elder Chamber", ItemTypeEnum.artefact);
+
+
 
     //Magmoor Caverns
 
