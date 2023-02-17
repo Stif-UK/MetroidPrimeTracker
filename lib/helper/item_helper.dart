@@ -1,4 +1,4 @@
-import 'package:metroid_prime_items/model/Items.dart';
+import 'package:metroid_prime_items/model/itemsmodel.dart';
 import 'package:metroid_prime_items/model/enums/region_enum.dart';
 import 'package:metroid_prime_items/model/enums/item_type_enum.dart';
 import 'package:hive/hive.dart';
