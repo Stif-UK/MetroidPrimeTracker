@@ -45,9 +45,7 @@ class ItemHelper {
       ..collected = false
       ..description = "";
 
-    print("Getting box to add item");
     final box = Hive.box<Items>("ItemBox");
-    print("Adding item");
     return box.add(item);
   }
 

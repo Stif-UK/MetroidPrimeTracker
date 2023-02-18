@@ -14,24 +14,20 @@ void main() async {
   await Hive.initFlutter();
 
   Hive.registerAdapter(ItemsAdapter());
-  print("opening box in main");
   await Hive.openBox<Items>("ItemBox");
 
-  print("checking if box needs populated");
   if(Hive.box<Items>("ItemBox").isEmpty){
-    print("populating box");
     ItemGenerator.generateItems();
   }
 
   runApp(GetMaterialApp(
     debugShowCheckedModeBanner: false,
-    title: 'Metroid Prime Item Tracker',
+    title: 'MP Checklist',
 
     theme: lightTheme ,
     darkTheme: darkTheme,
     themeMode: ThemeMode.system,
-    //ThemeMode.light,
-    //ThemeMode.system,
+
 
     home:  MetroidHome(),
   ));
