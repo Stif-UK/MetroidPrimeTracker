@@ -44,6 +44,10 @@ class _ItemListViewState extends State<ItemListView> {
               filteredList =  itemBox.values.where((item) => item.type == widget.type.toString()).toList();
             }
 
+            if(widget.region != null && widget.type != null){
+              filteredList = [];
+            }
+
 
 
 

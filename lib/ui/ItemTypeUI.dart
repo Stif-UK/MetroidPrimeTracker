@@ -61,8 +61,10 @@ class _ItemsTypeUIState extends State<ItemsTypeUI> {
         Align(
           alignment: Alignment.center,
           child: ElevatedButton(
-              onPressed: (){},
-              //onPressed: (){ Get.to(() => WearStats());},
+              onPressed: () {Get.to(() =>  const ItemListView(region: null, type: ItemTypeEnum.energy_tank,))!.then((value) =>
+              {if (value == null) {
+                setState((){})
+              }});},
               style: ButtonStyle(
                   shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                       RoundedRectangleBorder(
@@ -98,8 +100,10 @@ class _ItemsTypeUIState extends State<ItemsTypeUI> {
         Align(
           alignment: Alignment.center,
           child: ElevatedButton(
-              onPressed: (){},
-              //onPressed: (){ Get.to(() => WearStats());},
+              onPressed: () {Get.to(() =>  const ItemListView(region: null, type: ItemTypeEnum.power_bomb_upgrade,))!.then((value) =>
+              {if (value == null) {
+                setState((){})
+              }});},
               style: ButtonStyle(
                   shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                       RoundedRectangleBorder(
@@ -132,12 +136,14 @@ class _ItemsTypeUIState extends State<ItemsTypeUI> {
         const Divider(thickness: 4,),
 
 
-        //Button 4: Artefacts
+        //Button 4: Artifacts
         Align(
           alignment: Alignment.center,
           child: ElevatedButton(
-              onPressed: (){},
-              //onPressed: (){ Get.to(() => WearStats());},
+              onPressed: () {Get.to(() =>  const ItemListView(region: null, type: ItemTypeEnum.artefact,))!.then((value) =>
+              {if (value == null) {
+                setState((){})
+              }});},
               style: ButtonStyle(
                   shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                       RoundedRectangleBorder(
@@ -149,7 +155,7 @@ class _ItemsTypeUIState extends State<ItemsTypeUI> {
               ),
               child: const Padding(
                 padding: EdgeInsets.all(12.0),
-                child: Text("Artefacts",
+                child: Text("Artifacts",
                   style: TextStyle(
                     fontSize: 30,
                   ),),
@@ -174,8 +180,10 @@ class _ItemsTypeUIState extends State<ItemsTypeUI> {
         Align(
           alignment: Alignment.center,
           child: ElevatedButton(
-              onPressed: (){},
-              //onPressed: (){ Get.to(() => WearStats());},
+              onPressed: () {Get.to(() =>  const ItemListView(region: null, type: ItemTypeEnum.upgrade,))!.then((value) =>
+              {if (value == null) {
+                setState((){})
+              }});},
               style: ButtonStyle(
                   shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                       RoundedRectangleBorder(
