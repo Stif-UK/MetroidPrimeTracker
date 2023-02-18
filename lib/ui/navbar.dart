@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:metroid_prime_items/ui/about_app.dart';
 import 'package:metroid_prime_items/ui/privacy_policy.dart';
 import 'package:metroid_prime_items/ui/attributions.dart';
 import 'package:metroid_prime_items/ui/resetAll.dart';
@@ -25,7 +26,9 @@ class NavBar extends StatelessWidget {
           ListTile(
             title: const Text("About App"),
             trailing: const Icon(Icons.info_outline),
-            onTap: (){},
+            onTap: (){
+              Get.to(() => const AboutApp());
+            },
           ),
           ListTile(
             title: const Text("Attributions"),

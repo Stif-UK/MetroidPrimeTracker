@@ -32,13 +32,16 @@ class AboutAppCopy{
     );
   }
 
-  static Widget getAboutDeveloperCopy(){
+  static Widget getAboutAppCopy(){
     return const Padding(
       padding: EdgeInsets.all(12.0),
-      child: Text("Who or what is a StifDEV? \n"
-          "\nStifDEV is simply the name I use to release my applications, essentially a 'nom de plume'. There's a long, and not very interesting, story behind the name,"
-          "but in short I'm just a guy who likes to play around with code in my spare time.\n"
-          "\nWith a busy full time job and young children my time to do so is limited, but hopefully I've managed to build an application that others will get some value from - if you do like the app, please consider leaving a review to let me know!"
+      child: Text("This app lists all of the items that can be collected in Metroid Prime, and is designed as a companion as you play to help you check them off as you work towards 100% item collection.\n\n"
+          "The view can be changed to show either items and completion by region (the world of Tallon IV is split into five distinct areas in the game), or by item type by clicking the icon in the top right of the main page.nn"
+          "\n\n"
+          "Metroid Prime has long been one of my absolute favourite games, so I built this app to help me get to 100% completion as I play through the fantastic remastered version - I hope you find it useful too!\n\n"
+          "If you do enjoy the app, please consider leaving a rating or review on the app store.\n\n"
+          "Thank you."
+
       ),
     );
   }
