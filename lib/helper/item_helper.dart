@@ -151,7 +151,7 @@ class ItemHelper {
         break;
       case "ItemTypeEnum.artefact":
         {
-          returnString = "Artefact";
+          returnString = "Artifact";
         }
         break;
 

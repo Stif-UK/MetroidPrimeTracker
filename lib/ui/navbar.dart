@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:metroid_prime_items/ui/privacy_policy.dart';
 import 'package:metroid_prime_items/ui/attributions.dart';
+import 'package:metroid_prime_items/ui/resetAll.dart';
 import 'package:get/get.dart';
 
 class NavBar extends StatelessWidget {
@@ -37,7 +38,9 @@ class NavBar extends StatelessWidget {
           ListTile(
             title: const Text("Reset all Data"),
             trailing: const Icon(Icons.delete_outline),
-            onTap: (){},
+            onTap: (){
+              Get.to(() => const ResetAll());
+            },
           )
         ],
       ),
