@@ -296,6 +296,31 @@ class ItemHelper {
     ItemHelper.addItem("Artifact of Strength", RegionEnum.magmoor_caverns, "Warrior Shrine", ItemTypeEnum.artefact);
 
     //Phendrana Drifts
+    ItemHelper.addItem("Boost Ball", RegionEnum.phendrana_drifts, "Phendrana Canyon", ItemTypeEnum.upgrade);
+    ItemHelper.addItem("Wave Beam", RegionEnum.phendrana_drifts, "Chapel of the Elders", ItemTypeEnum.upgrade);
+    ItemHelper.addItem("Super Missile", RegionEnum.phendrana_drifts, "Observatory", ItemTypeEnum.upgrade);
+    ItemHelper.addItem("Thermal Visor", RegionEnum.phendrana_drifts, "Research Core", ItemTypeEnum.upgrade);
+    ItemHelper.addItem("Spider Ball", RegionEnum.phendrana_drifts, "Quarantine Cave", ItemTypeEnum.upgrade);
+    ItemHelper.addItem("Gravity Suit", RegionEnum.phendrana_drifts, "Gravity Chamber", ItemTypeEnum.upgrade);
+    ItemHelper.addItem("Missile Expansion", RegionEnum.phendrana_drifts, "Phendrana Shorelines", ItemTypeEnum.missile_expansion);
+    ItemHelper.addItem("Missile Expansion", RegionEnum.phendrana_drifts, "Phendrana Shorelines", ItemTypeEnum.missile_expansion);
+    ItemHelper.addItem("Missile Expansion", RegionEnum.phendrana_drifts, "Ice Ruins East", ItemTypeEnum.missile_expansion);
+    ItemHelper.addItem("Missile Expansion", RegionEnum.phendrana_drifts, "Ice Ruins East", ItemTypeEnum.missile_expansion);
+    ItemHelper.addItem("Missile Expansion", RegionEnum.phendrana_drifts, "Research Lab Hydra", ItemTypeEnum.missile_expansion);
+    ItemHelper.addItem("Missile Expansion", RegionEnum.phendrana_drifts, "Research Lab Aether", ItemTypeEnum.missile_expansion);
+    ItemHelper.addItem("Missile Expansion", RegionEnum.phendrana_drifts, "Frost Cave", ItemTypeEnum.missile_expansion);
+    ItemHelper.addItem("Missile Expansion", RegionEnum.phendrana_drifts, "Gravity Chamber", ItemTypeEnum.missile_expansion);
+    ItemHelper.addItem("Missile Expansion", RegionEnum.phendrana_drifts, "Quarantine Monitor", ItemTypeEnum.missile_expansion);
+    ItemHelper.addItem("Power Bomb Upgrade", RegionEnum.phendrana_drifts, "Ice Ruins West", ItemTypeEnum.power_bomb_upgrade);
+    ItemHelper.addItem("Power Bomb Upgrade", RegionEnum.phendrana_drifts, "Security Cave", ItemTypeEnum.power_bomb_upgrade);
+    ItemHelper.addItem("Energy Tank", RegionEnum.phendrana_drifts, "Ruined Courtyard", ItemTypeEnum.energy_tank);
+    ItemHelper.addItem("Energy Tank", RegionEnum.phendrana_drifts, "Research Lab Aether", ItemTypeEnum.energy_tank);
+    ItemHelper.addItem("Energy Tank", RegionEnum.phendrana_drifts, "Transport Access", ItemTypeEnum.energy_tank);
+    ItemHelper.addItem("Artifact of Elder", RegionEnum.phendrana_drifts, "Control Tower", ItemTypeEnum.artefact);
+    ItemHelper.addItem("Artifact of Sun", RegionEnum.phendrana_drifts, "Chozo Ice Temple", ItemTypeEnum.artefact);
+    ItemHelper.addItem("Artifact of Spirit", RegionEnum.phendrana_drifts, "Storage Cavern", ItemTypeEnum.artefact);
+
+
 
     //Phazon Mines
   }
