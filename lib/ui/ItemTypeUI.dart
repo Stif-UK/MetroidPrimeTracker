@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:metroid_prime_items/model/enums/item_type_enum.dart';
+
+import '../helper/item_helper.dart';
 
 class ItemsTypeUI extends StatefulWidget {
   const ItemsTypeUI({Key? key}) : super(key: key);
@@ -44,9 +47,9 @@ class _ItemsTypeUIState extends State<ItemsTypeUI> {
                 flex:1,
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: LinearProgressIndicator(value: 0.1,),
+                  child: LinearProgressIndicator(value: ItemHelper.getItemCompletion(ItemTypeEnum.missile_expansion),),
                 )),
-            Text("10%")
+            Text("${ItemHelper.getItemCompletionInt(ItemTypeEnum.missile_expansion)}%")
           ],
         ),
         const Divider(thickness: 4,),
@@ -81,9 +84,9 @@ class _ItemsTypeUIState extends State<ItemsTypeUI> {
                 flex:1,
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: LinearProgressIndicator(value: 0.25,),
+                  child: LinearProgressIndicator(value: ItemHelper.getItemCompletion(ItemTypeEnum.energy_tank),),
                 )),
-            Text("25%")
+            Text("${ItemHelper.getItemCompletionInt(ItemTypeEnum.energy_tank)}%")
           ],
         ),
         const Divider(thickness: 4,),
@@ -118,9 +121,9 @@ class _ItemsTypeUIState extends State<ItemsTypeUI> {
                 flex:1,
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: LinearProgressIndicator(value: 0.7,),
+                  child: LinearProgressIndicator(value: ItemHelper.getItemCompletion(ItemTypeEnum.power_bomb_upgrade),),
                 )),
-            Text("70%")
+            Text("${ItemHelper.getItemCompletionInt(ItemTypeEnum.power_bomb_upgrade)}%")
           ],
         ),
         const Divider(thickness: 4,),
@@ -156,9 +159,9 @@ class _ItemsTypeUIState extends State<ItemsTypeUI> {
                 flex:1,
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: LinearProgressIndicator(value: 0.33,),
+                  child: LinearProgressIndicator(value: ItemHelper.getItemCompletion(ItemTypeEnum.artefact),),
                 )),
-            Text("33%")
+            Text("${ItemHelper.getItemCompletionInt(ItemTypeEnum.artefact)}%")
           ],
         ),
         const Divider(thickness: 4,),
@@ -194,9 +197,9 @@ class _ItemsTypeUIState extends State<ItemsTypeUI> {
                 flex:1,
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: LinearProgressIndicator(value: 0.92,),
+                  child: LinearProgressIndicator(value: ItemHelper.getItemCompletion(ItemTypeEnum.upgrade),),
                 )),
-            Text("92%")
+            Text("${ItemHelper.getItemCompletionInt(ItemTypeEnum.upgrade)}%")
           ],
         ),
         const Divider(thickness: 4,),
