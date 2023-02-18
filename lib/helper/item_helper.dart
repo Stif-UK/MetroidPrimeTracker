@@ -284,6 +284,16 @@ class ItemHelper {
 
 
     //Magmoor Caverns
+    ItemHelper.addItem("Ice Spreader", RegionEnum.magmoor_caverns, "Shore Tunnel", ItemTypeEnum.upgrade);
+    ItemHelper.addItem("Plasma Beam", RegionEnum.magmoor_caverns, "Plasma Processing", ItemTypeEnum.upgrade);
+    ItemHelper.addItem("Missile Expansion", RegionEnum.magmoor_caverns, "Storage Cavern", ItemTypeEnum.missile_expansion);
+    ItemHelper.addItem("Missile Expansion", RegionEnum.magmoor_caverns, "Triclops Pit", ItemTypeEnum.missile_expansion);
+    ItemHelper.addItem("Missile Expansion", RegionEnum.magmoor_caverns, "Fiery Shores", ItemTypeEnum.missile_expansion);
+    ItemHelper.addItem("Power Bomb Upgrade", RegionEnum.magmoor_caverns, "Warrior Shrine", ItemTypeEnum.power_bomb_upgrade);
+    ItemHelper.addItem("Energy Tank", RegionEnum.magmoor_caverns, "Transport Tunnel A", ItemTypeEnum.energy_tank);
+    ItemHelper.addItem("Energy Tank", RegionEnum.magmoor_caverns, "Magmoor Workstation", ItemTypeEnum.energy_tank);
+    ItemHelper.addItem("Artifact of Nature", RegionEnum.magmoor_caverns, "Lava Lake", ItemTypeEnum.artefact);
+    ItemHelper.addItem("Artifact of Strength", RegionEnum.magmoor_caverns, "Warrior Shrine", ItemTypeEnum.artefact);
 
     //Phendrana Drifts
 
