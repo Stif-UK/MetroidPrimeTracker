@@ -8,6 +8,8 @@ import 'dart:async';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
+import 'helper/item_generator.dart';
+
 void main() async {
   await Hive.initFlutter();
 
@@ -18,7 +20,7 @@ void main() async {
   print("checking if box needs populated");
   if(Hive.box<Items>("ItemBox").isEmpty){
     print("populating box");
-    ItemHelper.generateItems();
+    ItemGenerator.generateItems();
   }
 
   runApp(GetMaterialApp(
