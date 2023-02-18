@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:metroid_prime_items/helper/item_helper.dart';
 import 'package:metroid_prime_items/model/enums/region_enum.dart';
 import 'package:metroid_prime_items/ui/ItemListView.dart';
 
@@ -21,7 +22,10 @@ class _RegionsUIState extends State<RegionsUI> {
         Align(
           alignment: Alignment.center,
           child: ElevatedButton(
-              onPressed: (){ Get.to(() =>  const ItemListView(region: RegionEnum.tallon_overworld));},
+              onPressed: () {Get.to(() =>  const ItemListView(region: RegionEnum.tallon_overworld))!.then((value) =>
+              {if (value == null) {
+                setState((){})
+              }});},
               style: ButtonStyle(
                   shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                       RoundedRectangleBorder(
@@ -46,9 +50,9 @@ class _RegionsUIState extends State<RegionsUI> {
                 flex:1,
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: LinearProgressIndicator(value: 0.5,),
+                  child: LinearProgressIndicator(value: ItemHelper.getRegionCompletion(RegionEnum.tallon_overworld),),
                 )),
-            Text("50%")
+            Text("${ItemHelper.getRegionCompletionInt(RegionEnum.tallon_overworld)}%")
           ],
         ),
         const Divider(thickness: 4,),
@@ -57,7 +61,11 @@ class _RegionsUIState extends State<RegionsUI> {
         Align(
           alignment: Alignment.center,
           child: ElevatedButton(
-              onPressed: (){ Get.to(() =>  const ItemListView(region: RegionEnum.chozo_ruins));},              style: ButtonStyle(
+              onPressed: () {Get.to(() =>  const ItemListView(region: RegionEnum.chozo_ruins))!.then((value) =>
+              {if (value == null) {
+                setState((){})
+              }});},
+              style: ButtonStyle(
                   shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                       RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(20.0),
@@ -81,9 +89,9 @@ class _RegionsUIState extends State<RegionsUI> {
                 flex:1,
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: LinearProgressIndicator(value: 0.3,),
+                  child: LinearProgressIndicator(value: ItemHelper.getRegionCompletion(RegionEnum.chozo_ruins),),
                 )),
-            Text("30%")
+            Text("${ItemHelper.getRegionCompletionInt(RegionEnum.chozo_ruins)}%")
           ],
         ),
         const Divider(thickness: 4,),
@@ -92,7 +100,11 @@ class _RegionsUIState extends State<RegionsUI> {
         Align(
           alignment: Alignment.center,
           child: ElevatedButton(
-              onPressed: (){ Get.to(() =>  const ItemListView(region: RegionEnum.magmoor_caverns));},              style: ButtonStyle(
+              onPressed: () {Get.to(() =>  const ItemListView(region: RegionEnum.magmoor_caverns))!.then((value) =>
+              {if (value == null) {
+                setState((){})
+              }});},
+              style: ButtonStyle(
                   shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                       RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(20.0),
@@ -116,9 +128,9 @@ class _RegionsUIState extends State<RegionsUI> {
                 flex:1,
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: LinearProgressIndicator(value: 0.2,),
+                  child: LinearProgressIndicator(value: ItemHelper.getRegionCompletion(RegionEnum.magmoor_caverns),),
                 )),
-            Text("20%")
+            Text("${ItemHelper.getRegionCompletionInt(RegionEnum.magmoor_caverns)}%")
           ],
         ),
         const Divider(thickness: 4,),
@@ -128,7 +140,10 @@ class _RegionsUIState extends State<RegionsUI> {
         Align(
           alignment: Alignment.center,
           child: ElevatedButton(
-              onPressed: (){ Get.to(() =>  const ItemListView(region: RegionEnum.phendrana_drifts));},
+              onPressed: () {Get.to(() =>  const ItemListView(region: RegionEnum.phendrana_drifts))!.then((value) =>
+              {if (value == null) {
+                setState((){})
+              }});},
               style: ButtonStyle(
                   shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                       RoundedRectangleBorder(
@@ -153,9 +168,9 @@ class _RegionsUIState extends State<RegionsUI> {
                 flex:1,
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: LinearProgressIndicator(value: 0.6,),
+                  child: LinearProgressIndicator(value: ItemHelper.getRegionCompletion(RegionEnum.phendrana_drifts),),
                 )),
-            Text("60%")
+            Text("${ItemHelper.getRegionCompletionInt(RegionEnum.phendrana_drifts)}%")
           ],
         ),
         const Divider(thickness: 4,),
@@ -165,7 +180,10 @@ class _RegionsUIState extends State<RegionsUI> {
         Align(
           alignment: Alignment.center,
           child: ElevatedButton(
-              onPressed: (){ Get.to(() =>  const ItemListView(region: RegionEnum.phazon_mines));},
+              onPressed: () {Get.to(() =>  const ItemListView(region: RegionEnum.phazon_mines))!.then((value) =>
+              {if (value == null) {
+                setState((){})
+              }});},
               style: ButtonStyle(
                   shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                       RoundedRectangleBorder(
@@ -190,9 +208,9 @@ class _RegionsUIState extends State<RegionsUI> {
                 flex:1,
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: LinearProgressIndicator(value: 0.9,),
+                  child: LinearProgressIndicator(value: ItemHelper.getRegionCompletion(RegionEnum.phazon_mines),),
                 )),
-            Text("90%")
+            Text("${ItemHelper.getRegionCompletionInt(RegionEnum.phazon_mines)}%")
           ],
         ),
         const Divider(thickness: 4,),

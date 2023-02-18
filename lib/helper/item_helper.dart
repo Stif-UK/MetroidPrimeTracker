@@ -295,14 +295,29 @@ class ItemHelper {
     final itemBox = Hive.box<Items>("ItemBox");
     List<Items> filteredList = itemBox.values.where((item) =>
     item.region == region.toString()).toList();
+
+    if (filteredList.length == 0){
+      return 0.0;
+    }
+
     int total = filteredList.length;
     int collected = filteredList
         .where((item) => item.collected == true)
         .length;
 
     double result = collected / total;
-    print(result);
     return result;
+  }
+
+  static int getRegionCompletionInt(RegionEnum region){
+    double preliminary = ItemHelper.getRegionCompletion(region);
+
+    if(preliminary == 0.0){
+      return 0;
+    }
+
+    int returnvalue =  (preliminary*100).round();
+    return returnvalue;
   }
 
 }
