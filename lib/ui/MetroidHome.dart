@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:metroid_prime_items/ui/ItemTypeUI.dart';
 import 'RegionsUI.dart';
+import 'navbar.dart';
 
 class MetroidHome extends StatefulWidget {
   const MetroidHome({Key? key}) : super(key: key);
@@ -27,6 +28,7 @@ class _MetroidHomeState extends State<MetroidHome> {
           },)
         ],
       ),
+      drawer: const NavBar(),
       body: _showRegions? RegionsUI(): ItemsTypeUI(),
     );
   }
