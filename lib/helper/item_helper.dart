@@ -144,7 +144,7 @@ class ItemHelper {
   }
 
 
-  
+
 
   static double getRegionCompletion(RegionEnum region) {
     final itemBox = Hive.box<Items>("ItemBox");

@@ -181,6 +181,25 @@ class ItemGenerator{
 
 
     //Phazon Mines
+    ItemHelper.addItem("Power Bomb", RegionEnum.phazon_mines, "Central Dynamo", ItemTypeEnum.upgrade);
+    ItemHelper.addItem("Grapple Beam", RegionEnum.phazon_mines, "Storage Depot B", ItemTypeEnum.upgrade);
+    ItemHelper.addItem("Flamethrower", RegionEnum.phazon_mines, "Storage Depot A", ItemTypeEnum.upgrade);
+    ItemHelper.addItem("Phazon Suit", RegionEnum.phazon_mines, "Elite Quarters", ItemTypeEnum.upgrade);
+    ItemHelper.addItem("Missile Expansion", RegionEnum.phazon_mines, "Main Quarry", ItemTypeEnum.missile_expansion);
+    ItemHelper.addItem("Missile Expansion", RegionEnum.phazon_mines, "Security Access A", ItemTypeEnum.missile_expansion);
+    ItemHelper.addItem("Missile Expansion", RegionEnum.phazon_mines, "Elite Research", ItemTypeEnum.missile_expansion);
+    ItemHelper.addItem("Missile Expansion", RegionEnum.phazon_mines, "Elite Control Access", ItemTypeEnum.missile_expansion);
+    ItemHelper.addItem("Missile Expansion", RegionEnum.phazon_mines, "Phazon Processing Center", ItemTypeEnum.missile_expansion);
+    ItemHelper.addItem("Missile Expansion", RegionEnum.phazon_mines, "Metroid Quarantine A", ItemTypeEnum.missile_expansion);
+    ItemHelper.addItem("Missile Expansion", RegionEnum.phazon_mines, "Fungal Access Hall", ItemTypeEnum.missile_expansion);
+    ItemHelper.addItem("Missile Expansion", RegionEnum.phazon_mines, "Fungal Hall B", ItemTypeEnum.missile_expansion);
+    ItemHelper.addItem("Missile Expansion", RegionEnum.phazon_mines, "Metroid Quarantine B", ItemTypeEnum.missile_expansion);
+    ItemHelper.addItem("Energy Tank", RegionEnum.phazon_mines, "Ventilation Shaft", ItemTypeEnum.energy_tank);
+    ItemHelper.addItem("Energy Tank", RegionEnum.phazon_mines, "Processing Center Access", ItemTypeEnum.energy_tank);
+    ItemHelper.addItem("Artifact of Warrior", RegionEnum.phazon_mines, "Elite Research", ItemTypeEnum.artefact);
+    ItemHelper.addItem("Artifact of Newborn", RegionEnum.phazon_mines, "Phazon Mining Tunnel", ItemTypeEnum.artefact);
+
+
   }
 
 
