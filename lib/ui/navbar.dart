@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:metroid_prime_items/theme/metroid_icons_icons.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class NavBar extends StatelessWidget {
   const NavBar({Key? key}) : super(key: key);
@@ -9,7 +9,7 @@ class NavBar extends StatelessWidget {
     return Drawer(
       child: ListView(
         children: [
-          const DrawerHeader(child: Icon(Icons.accessibility)),
+          const DrawerHeader(child: Icon(FontAwesomeIcons.gamepad, size: 40.0,)),
           //const SizedBox(height: 100.0,),
           ListTile(
             title: const Text("Privacy Policy"),
