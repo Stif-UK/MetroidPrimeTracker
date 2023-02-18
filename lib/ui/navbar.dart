@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:metroid_prime_items/ui/privacy_policy.dart';
+import 'package:metroid_prime_items/ui/attributions.dart';
 import 'package:get/get.dart';
 
 class NavBar extends StatelessWidget {
@@ -28,7 +29,9 @@ class NavBar extends StatelessWidget {
           ListTile(
             title: const Text("Attributions"),
             trailing: const Icon(Icons.check_box_outlined),
-            onTap: (){},
+            onTap: (){
+              Get.to(() => const Attributions());
+            },
           ),
           const SizedBox(height: 100,),
           ListTile(
