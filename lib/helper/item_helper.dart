@@ -3,7 +3,10 @@ import 'package:metroid_prime_items/model/enums/region_enum.dart';
 import 'package:metroid_prime_items/model/enums/item_type_enum.dart';
 import 'package:hive/hive.dart';
 import 'package:flutter/material.dart';
-import 'package:metroid_prime_items/theme/metroid_icons_icons.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
+
+
 
 class ItemHelper {
 
@@ -36,7 +39,7 @@ class ItemHelper {
     switch (type) {
       case "ItemTypeEnum.missile_expansion":
         {
-          returnIcon = const Icon(Icons.upgrade);
+          returnIcon = const Icon(FontAwesomeIcons.rocket);
         }
         break;
       case "ItemTypeEnum.energy_tank":
