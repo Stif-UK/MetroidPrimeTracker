@@ -233,7 +233,6 @@ class ItemHelper {
       Items? currentItem = box.getAt(index);
       currentItem?.collected = false;
       currentItem?.save();
-      print("${currentItem?.title} in ${currentItem?.room} has had it's collection status set to ${currentItem?.collected}");
     }
 
 
