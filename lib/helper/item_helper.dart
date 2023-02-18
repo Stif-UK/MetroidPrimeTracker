@@ -14,6 +14,22 @@ class ItemHelper {
     return Hive.box<Items>("ItemBox");
   }
 
+  static getTitle(ItemTypeEnum? type, RegionEnum? region) {
+    if((type == null && region == null) || (type != null && region != null)){
+      return const Text("Item Tracker");
+    }
+    if(type == null && region != null){
+      return Text("${ItemHelper.getRegionName(region)}");
+    }
+
+    if(type != null && region == null){
+      return Text("${getUpgradeTypeName(type.toString())}");
+    }
+    
+    
+
+  }
+
   static Future addItem(String title, RegionEnum region, String room,
       ItemTypeEnum type) {
     String rg = region.toString();

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:metroid_prime_items/model/enums/item_type_enum.dart';
-
+import 'package:get/get.dart';
+import 'ItemListView.dart';
 import '../helper/item_helper.dart';
 
 class ItemsTypeUI extends StatefulWidget {
@@ -21,8 +22,10 @@ class _ItemsTypeUIState extends State<ItemsTypeUI> {
         Align(
           alignment: Alignment.center,
           child: ElevatedButton(
-              onPressed: (){},
-              //onPressed: (){ Get.to(() => WearStats());},
+              onPressed: () {Get.to(() =>  const ItemListView(region: null, type: ItemTypeEnum.missile_expansion,))!.then((value) =>
+              {if (value == null) {
+                setState((){})
+              }});},
               style: ButtonStyle(
                   shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                       RoundedRectangleBorder(

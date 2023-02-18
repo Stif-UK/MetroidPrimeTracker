@@ -10,9 +10,10 @@ class ItemListView extends StatefulWidget {
   //const ItemListView({Key? key}) : super(key: key);
 
   //final String title;
-  final RegionEnum region;
+  final RegionEnum? region;
+  final ItemTypeEnum? type;
 
-  const ItemListView({super.key, required this.region});
+  const ItemListView({super.key, required this.region, required this.type});
 
 
   @override
@@ -27,13 +28,24 @@ class _ItemListViewState extends State<ItemListView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(ItemHelper.getRegionName(widget.region)!),
+        title: ItemHelper.getTitle(widget.type, widget.region),
 
       ),
       body: ValueListenableBuilder<Box<Items>>(
           valueListenable: itemBox.listenable(),
           builder: (context, box, _){
-            List<Items> filteredList = itemBox.values.where((item) => item.region == widget.region.toString()).toList();
+            List<Items> filteredList = [];
+
+            if(widget.region != null){
+              filteredList =  itemBox.values.where((item) => item.region == widget.region.toString()).toList();
+            }
+
+            if(widget.type != null){
+              filteredList =  itemBox.values.where((item) => item.type == widget.type.toString()).toList();
+            }
+
+
+
 
 
 

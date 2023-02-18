@@ -22,7 +22,7 @@ class _RegionsUIState extends State<RegionsUI> {
         Align(
           alignment: Alignment.center,
           child: ElevatedButton(
-              onPressed: () {Get.to(() =>  const ItemListView(region: RegionEnum.tallon_overworld))!.then((value) =>
+              onPressed: () {Get.to(() =>  const ItemListView(region: RegionEnum.tallon_overworld, type: null,))!.then((value) =>
               {if (value == null) {
                 setState((){})
               }});},
@@ -61,7 +61,7 @@ class _RegionsUIState extends State<RegionsUI> {
         Align(
           alignment: Alignment.center,
           child: ElevatedButton(
-              onPressed: () {Get.to(() =>  const ItemListView(region: RegionEnum.chozo_ruins))!.then((value) =>
+              onPressed: () {Get.to(() =>  const ItemListView(region: RegionEnum.chozo_ruins, type: null))!.then((value) =>
               {if (value == null) {
                 setState((){})
               }});},
@@ -100,7 +100,7 @@ class _RegionsUIState extends State<RegionsUI> {
         Align(
           alignment: Alignment.center,
           child: ElevatedButton(
-              onPressed: () {Get.to(() =>  const ItemListView(region: RegionEnum.magmoor_caverns))!.then((value) =>
+              onPressed: () {Get.to(() =>  const ItemListView(region: RegionEnum.magmoor_caverns, type: null))!.then((value) =>
               {if (value == null) {
                 setState((){})
               }});},
@@ -140,7 +140,7 @@ class _RegionsUIState extends State<RegionsUI> {
         Align(
           alignment: Alignment.center,
           child: ElevatedButton(
-              onPressed: () {Get.to(() =>  const ItemListView(region: RegionEnum.phendrana_drifts))!.then((value) =>
+              onPressed: () {Get.to(() =>  const ItemListView(region: RegionEnum.phendrana_drifts, type: null))!.then((value) =>
               {if (value == null) {
                 setState((){})
               }});},
@@ -180,7 +180,7 @@ class _RegionsUIState extends State<RegionsUI> {
         Align(
           alignment: Alignment.center,
           child: ElevatedButton(
-              onPressed: () {Get.to(() =>  const ItemListView(region: RegionEnum.phazon_mines))!.then((value) =>
+              onPressed: () {Get.to(() =>  const ItemListView(region: RegionEnum.phazon_mines, type: null))!.then((value) =>
               {if (value == null) {
                 setState((){})
               }});},
