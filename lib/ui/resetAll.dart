@@ -18,7 +18,9 @@ class ResetAll extends StatelessWidget {
           AboutAppCopy.getResetAllCopy(),
           const SizedBox(height: 40,),
           ElevatedButton(
-            onPressed: (){},
+            onPressed: (){
+              AboutAppCopy.getResetAllDialog(context);
+            },
               // onPressed: () {Get.to(() =>  const ItemListView(region: null, type: ItemTypeEnum.upgrade,))!.then((value) =>
               // {if (value == null) {
               //   setState((){})

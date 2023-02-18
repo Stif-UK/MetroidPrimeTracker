@@ -1,9 +1,11 @@
+import 'package:metroid_prime_items/helper/item_generator.dart';
 import 'package:metroid_prime_items/model/itemsmodel.dart';
 import 'package:metroid_prime_items/model/enums/region_enum.dart';
 import 'package:metroid_prime_items/model/enums/item_type_enum.dart';
 import 'package:hive/hive.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:metroid_prime_items/model/itemsmodel.dart';
 
 
 
@@ -222,6 +224,19 @@ class ItemHelper {
 
     int returnvalue =  (preliminary*100).round();
     return returnvalue;
+  }
+
+  static resetAllData(){
+    final Box<Items> box = ItemHelper.getItems();
+    int size = box.length;
+    for(var index = 0; index < size; index++){
+      Items? currentItem = box.getAt(index);
+      currentItem?.collected = false;
+      currentItem?.save();
+      print("${currentItem?.title} in ${currentItem?.room} has had it's collection status set to ${currentItem?.collected}");
+    }
+
+
   }
 
 }

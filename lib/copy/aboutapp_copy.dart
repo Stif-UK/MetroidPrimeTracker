@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:metroid_prime_items/helper/item_helper.dart';
 
 class AboutAppCopy{
 
@@ -48,6 +50,25 @@ class AboutAppCopy{
         textAlign: TextAlign.center,
         style: TextStyle(fontSize: 20,),
     ));
+  }
+
+  static getResetAllDialog(BuildContext context){
+    Get.defaultDialog(
+      title: "Reset All Data",
+      middleText: "Are you Sure? Data will reset to 0% completion.",
+      textConfirm: "Yes",
+      textCancel: "No Thanks",
+      confirmTextColor: Colors.white,
+      buttonColor: Colors.lightBlueAccent,
+      onConfirm: () {
+        print("calling reset all from dialog");
+        ItemHelper.resetAllData();
+        Get.back();
+      },
+      onCancel: () => Get.back(),
+
+    );
+
   }
 
 }
