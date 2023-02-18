@@ -179,4 +179,34 @@ class ItemHelper {
     return returnvalue;
   }
 
+  static double getItemCompletion(ItemTypeEnum type) {
+    final itemBox = Hive.box<Items>("ItemBox");
+    List<Items> filteredList = itemBox.values.where((item) =>
+    item.type == type.toString()).toList();
+
+    if (filteredList.isEmpty){
+      return 0.0;
+    }
+
+    int total = filteredList.length;
+    int collected = filteredList
+        .where((item) => item.collected == true)
+        .length;
+
+    double result = collected / total;
+    return result;
+  }
+
+  static int getItemCompletionInt(ItemTypeEnum type){
+    double preliminary = ItemHelper.getItemCompletion(type);
+
+    if(preliminary == 0.0){
+      return 0;
+    }
+
+    int returnvalue =  (preliminary*100).round();
+    return returnvalue;
+  }
+
 }
+
