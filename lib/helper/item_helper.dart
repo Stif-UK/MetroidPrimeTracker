@@ -148,6 +148,44 @@ class ItemHelper {
     return returnString;
   }
 
+  static String? getRegionNameFromString(String region) {
+    String returnString;
+
+    switch (region) {
+      case "RegionEnum.tallon_overworld":
+        {
+          returnString = "Tallon Overworld";
+        }
+        break;
+      case "RegionEnum.chozo_ruins":
+        {
+          returnString = "Chozo Ruins";
+        }
+        break;
+      case "RegionEnum.magmoor_caverns":
+        {
+          returnString = "Magmoor Caverns";
+        }
+        break;
+      case "RegionEnum.phendrana_drifts":
+        {
+          returnString = "Phendrana Drifts";
+        }
+        break;
+      case "RegionEnum.phazon_mines":
+        {
+          returnString = "Phazon Mines";
+        }
+        break;
+
+      default:
+        {
+          returnString = "";
+        }
+    }
+    return returnString;
+  }
+
   static String? getUpgradeTypeName(String type) {
     String returnString;
 

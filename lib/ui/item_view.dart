@@ -36,7 +36,7 @@ class _ItemViewState extends State<ItemView> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           ListTile(
-            title: Text("Region: ${widget.currentItem.region}"),
+            title: Text("Region: ${ItemHelper.getRegionNameFromString(widget.currentItem.region)}"),
           ),
           const Divider(thickness: 2,),
           ListTile(
