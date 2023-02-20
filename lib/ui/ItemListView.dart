@@ -5,6 +5,8 @@ import 'package:metroid_prime_items/helper/item_helper.dart';
 import 'package:metroid_prime_items/model/enums/item_type_enum.dart';
 import 'package:metroid_prime_items/model/enums/region_enum.dart';
 import 'package:metroid_prime_items/model/itemsmodel.dart';
+import 'package:get/get.dart';
+import 'package:metroid_prime_items/ui/item_view.dart';
 
 class ItemListView extends StatefulWidget {
   //const ItemListView({Key? key}) : super(key: key);
@@ -85,19 +87,11 @@ class _ItemListViewState extends State<ItemListView> {
                       currentItem.save();
                     });
                   } ,
+                  onLongPress: (){
+                    Get.to(() => ItemView(currentItem: currentItem));
+                  },
                 );
-                // return CheckboxListTile(
-                //   title: Text(currentItem!.room),
-                //     subtitle: Text(currentItem.title),
-                //     controlAffinity: ListTileControlAffinity.leading,
-                //     value: currentItem.collected,
-                //     secondary: ItemHelper.getItemTypeIcon(currentItem.type),
-                //     onChanged: (bool? value){
-                //     setState(() {
-                //       currentItem.collected = value!;
-                //       currentItem.save();
-                //     });
-                //     });
+                
               },
               separatorBuilder: (context, index){
                 return const Divider(thickness: 2,);
