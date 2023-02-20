@@ -65,18 +65,30 @@ class _ItemListViewState extends State<ItemListView> {
                 var currentItem = filteredList.elementAt(index);
 
 
-                return CheckboxListTile(
+                return ListTile(
                   title: Text(currentItem!.room),
                     subtitle: Text(currentItem.title),
-                    controlAffinity: ListTileControlAffinity.leading,
-                    value: currentItem.collected,
-                    secondary: ItemHelper.getItemTypeIcon(currentItem.type),
-                    onChanged: (bool? value){
+                  trailing: ItemHelper.getItemTypeIcon(currentItem.type),
+                  leading: currentItem.collected? const Icon(Icons.check_box) : const Icon(Icons.check_box_outline_blank),
+                  onTap:(){
                     setState(() {
-                      currentItem.collected = value!;
+                      currentItem.collected = !currentItem.collected;
                       currentItem.save();
                     });
-                    });
+                  } ,
+                );
+                // return CheckboxListTile(
+                //   title: Text(currentItem!.room),
+                //     subtitle: Text(currentItem.title),
+                //     controlAffinity: ListTileControlAffinity.leading,
+                //     value: currentItem.collected,
+                //     secondary: ItemHelper.getItemTypeIcon(currentItem.type),
+                //     onChanged: (bool? value){
+                //     setState(() {
+                //       currentItem.collected = value!;
+                //       currentItem.save();
+                //     });
+                //     });
               },
               separatorBuilder: (context, index){
                 return const Divider(thickness: 2,);
