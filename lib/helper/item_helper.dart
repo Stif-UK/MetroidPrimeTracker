@@ -32,6 +32,29 @@ class ItemHelper {
 
   }
 
+  static getCounts(ItemTypeEnum? type, RegionEnum? region) {
+    final itemlist = getItems();
+
+
+    if((type == null && region == null) || (type != null && region != null)){
+      return const Text("");
+    }
+    if(type == null && region != null){
+      int collected = itemlist.values.where((element) => element.region.toString() == region.toString() && element.collected == true).length;
+      int total = itemlist.values.where((element) => element.region.toString() == region.toString()).length;
+      return Text("$collected/$total", style: const TextStyle(fontWeight: FontWeight.bold),);
+    }
+
+    if(type != null && region == null){
+      int collected = itemlist.values.where((element) => element.type == type.toString() && element.collected == true).length;
+      int total = itemlist.values.where((element) => element.type == type.toString()).length;
+      return Text("$collected/$total", style: const TextStyle(fontWeight: FontWeight.bold),);
+    }
+
+
+
+  }
+
   static Future addItem(String title, RegionEnum region, String room,
       ItemTypeEnum type) {
     String rg = region.toString();

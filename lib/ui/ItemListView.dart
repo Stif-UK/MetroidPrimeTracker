@@ -29,6 +29,15 @@ class _ItemListViewState extends State<ItemListView> {
     return Scaffold(
       appBar: AppBar(
         title: ItemHelper.getTitle(widget.type, widget.region),
+        actions: [
+          Padding(
+            padding: const EdgeInsets.fromLTRB(0,0,20.0, 0),
+            child: Center(
+              child: ItemHelper.getCounts(widget.type, widget.region),
+            ),
+          )
+
+        ],
 
       ),
       body: ValueListenableBuilder<Box<Items>>(
