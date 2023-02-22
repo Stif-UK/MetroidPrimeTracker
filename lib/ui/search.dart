@@ -5,7 +5,7 @@ import 'package:metroid_prime_items/ui/search_finder.dart';
 class SearchWidget extends SearchDelegate {
 
   @override
-  final String? searchFieldLabel = "Search by Room";
+  final String? searchFieldLabel = "Search by Room Name";
 
   //Create an icon to clear the search query
   @override

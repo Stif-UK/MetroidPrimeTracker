@@ -35,6 +35,7 @@ class SearchFinder extends StatelessWidget {
                 final Items item = results[index];
 
                 return ListTile(
+                  isThreeLine: true,
                   onTap: (){
                     //This is where we update index so that we can find the right screen to go to
                     Get.to(() => ItemView(currentItem: item));
@@ -45,7 +46,9 @@ class SearchFinder extends StatelessWidget {
                       Text(item.room)
                     ],
                   ),
-                  subtitle: Text(item.type),
+                  subtitle: Text("${ItemHelper.getRegionNameFromString(item.region)}\n${ItemHelper.getUpgradeTypeName(item.type)}"),
+                  leading: item.collected? const Icon(Icons.check_box_outlined) : const Icon(Icons.check_box_outline_blank),
+                  trailing: ItemHelper.getItemTypeIcon(item.type),
 
                 );
               }
