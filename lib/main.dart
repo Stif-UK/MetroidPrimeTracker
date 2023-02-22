@@ -7,10 +7,16 @@ import 'package:metroid_prime_items/ui/MetroidHome.dart';
 import 'dart:async';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
+import 'provider/adstate.dart';
 
 import 'helper/item_generator.dart';
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  final initFuture = MobileAds.instance.initialize();
+  final adState = AdState(initFuture);
+
   await Hive.initFlutter();
 
   Hive.registerAdapter(ItemsAdapter());
