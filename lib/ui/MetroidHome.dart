@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:metroid_prime_items/ui/ItemTypeUI.dart';
+import 'package:metroid_prime_items/ui/search.dart';
 import 'RegionsUI.dart';
 import 'navbar.dart';
 
@@ -25,11 +26,20 @@ class _MetroidHomeState extends State<MetroidHome> {
                 setState(() {
                   _showRegions = !_showRegions;
                 });
-          },)
+          },),
+
+          IconButton(
+            icon: const Icon(Icons.search),
+            onPressed: (){
+              showSearch(
+                  context: context,
+                  delegate: SearchWidget());
+            },
+          )
         ],
       ),
       drawer: const NavBar(),
-      body: _showRegions? RegionsUI(): ItemsTypeUI(),
+      body: _showRegions? const RegionsUI(): const ItemsTypeUI(),
     );
   }
 }
