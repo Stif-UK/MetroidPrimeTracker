@@ -10,6 +10,7 @@ class MetroidPreferences {
 
   //Instance variables
   static const _keyOpenCount = 'openCount';
+  static const _keyAppPurchased = 'appPurchased';
 
 
   //Getters and setters
@@ -19,5 +20,11 @@ class MetroidPreferences {
 
   static Future setOpenCount(int openCount) async =>
       await _preferences.setInt(_keyOpenCount, openCount);
+
+  //Getter and setter for purchased bool
+  static bool? getAppPurchasedStatus() => _preferences.getBool(_keyAppPurchased);
+
+  static Future setAppPurchasedStatus(bool appPurchased) async =>
+      await _preferences.setBool(_keyAppPurchased, appPurchased);
 
 }
