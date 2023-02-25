@@ -31,7 +31,7 @@ class _RegionsUIState extends State<RegionsUI> {
       adState.initialization.then((status) {
         setState(() {
           banner = BannerAd(
-              adUnitId: adState.getTestAds,
+              adUnitId: adState.getTestAds,//TODO: Get correct adunit for page
               //adUnitId: WristCheckConfig.prodBuild == false? adState.getTestAds : AdUnits.viewWatchBannerAdUnitId,
               //If the device screen is large enough display a larger ad on this screen
               size: AdSize.banner,
