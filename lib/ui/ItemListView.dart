@@ -114,15 +114,21 @@ class _ItemListViewState extends State<ItemListView> {
                         title: Text(currentItem!.room),
                           subtitle: Text(currentItem.title),
                         trailing: ItemHelper.getItemTypeIcon(currentItem.type),
-                        leading: currentItem.collected? const Icon(Icons.check_box) : const Icon(Icons.check_box_outline_blank),
-                        onTap:(){
-                          setState(() {
-                            currentItem.collected = !currentItem.collected;
-                            currentItem.save();
+                        leading: IconButton(
+                          icon: currentItem.collected? const Icon(Icons.check_box) : const Icon(Icons.check_box_outline_blank),
+                          onPressed: (){
+                            setState(() {
+                              currentItem.collected = !currentItem.collected;
+                              currentItem.save();
+                            });
+                          } ,
+                        ),
+                        onTap: (){
+                          Get.to(() => ItemView(currentItem: currentItem))?.then((value) {
+                            setState(() {
+
+                            });
                           });
-                        } ,
-                        onLongPress: (){
-                          Get.to(() => ItemView(currentItem: currentItem));
                         },
                       );
 
