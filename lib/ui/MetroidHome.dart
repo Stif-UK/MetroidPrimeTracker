@@ -3,6 +3,9 @@ import 'package:metroid_prime_items/ui/ItemTypeUI.dart';
 import 'package:metroid_prime_items/ui/search.dart';
 import 'RegionsUI.dart';
 import 'navbar.dart';
+import 'package:app_tracking_transparency/app_tracking_transparency.dart';
+import 'dart:io' show Platform;
+
 
 class MetroidHome extends StatefulWidget {
   const MetroidHome({Key? key}) : super(key: key);
@@ -14,8 +17,13 @@ class MetroidHome extends StatefulWidget {
 class _MetroidHomeState extends State<MetroidHome> {
   var _showRegions = true;
 
+
   @override
   Widget build(BuildContext context) {
+    if(Platform.isIOS) {
+      AppTrackingTransparency.requestTrackingAuthorization();
+    }
+
     return Scaffold(
       appBar: AppBar(
         title: _showRegions? const Text("Tallon Regions"): const Text("Item Types"),
