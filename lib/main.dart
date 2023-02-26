@@ -33,6 +33,11 @@ void main() async {
     ItemGenerator.generateItems();
   }
 
+  //Track app open count
+  MetroidPreferences.getOpenCount() == null?
+    MetroidPreferences.setOpenCount(1):
+      MetroidPreferences.setOpenCount(MetroidPreferences.getOpenCount()! + 1);
+
   runApp(
       Provider.value(
         value: adState,

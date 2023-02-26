@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:metroid_prime_items/model/metroid_preferences.dart';
 import 'package:metroid_prime_items/ui/about_app.dart';
 import 'package:metroid_prime_items/ui/privacy_policy.dart';
 import 'package:metroid_prime_items/ui/attributions.dart';
@@ -11,10 +12,28 @@ class NavBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    int clickCounter =0;
     return Drawer(
       child: ListView(
         children: [
-          const DrawerHeader(child: Icon(FontAwesomeIcons.gamepad, size: 40.0,)),
+          DrawerHeader(child: IconButton(
+            splashColor: Colors.transparent,
+          icon: const Icon(FontAwesomeIcons.gamepad, size: 40.0),
+      onPressed: (){
+            print(clickCounter);
+            clickCounter++;
+            print(clickCounter);
+            if (clickCounter > 5) {
+              Get.defaultDialog(
+                title: "Open Count",
+                middleText: MetroidPreferences.getOpenCount().toString()
+              );
+            }
+      },
+
+      )),
+
+          //Icon(FontAwesomeIcons.gamepad, size: 40.0,)),
           //const SizedBox(height: 100.0,),
           ListTile(
             title: const Text("Privacy Policy"),
