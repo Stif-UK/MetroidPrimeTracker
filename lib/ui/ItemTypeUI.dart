@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
+import 'package:metroid_prime_items/model/adUnits.dart';
 import 'package:metroid_prime_items/model/enums/item_type_enum.dart';
 import 'package:get/get.dart';
 import '../helper/ad_widget_helper.dart';
@@ -30,7 +31,7 @@ class _ItemsTypeUIState extends State<ItemsTypeUI> {
       adState.initialization.then((status) {
         setState(() {
           banner = BannerAd(
-              adUnitId: adState.getTestAds,//TODO: Get correct adunit for page
+              adUnitId: AdUnits.itemsUIBannerAdUnitId,
               //adUnitId: WristCheckConfig.prodBuild == false? adState.getTestAds : AdUnits.viewWatchBannerAdUnitId,
               //If the device screen is large enough display a larger ad on this screen
               size: AdSize.banner,

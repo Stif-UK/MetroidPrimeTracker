@@ -10,6 +10,7 @@ import 'package:metroid_prime_items/helper/ad_widget_helper.dart';
 import 'package:metroid_prime_items/model/metroid_preferences.dart';
 import 'package:provider/provider.dart';
 
+
 class RegionsUI extends StatefulWidget {
   const RegionsUI({Key? key}) : super(key: key);
 
@@ -31,7 +32,7 @@ class _RegionsUIState extends State<RegionsUI> {
       adState.initialization.then((status) {
         setState(() {
           banner = BannerAd(
-              adUnitId: adState.getTestAds,//TODO: Get correct adunit for page
+              adUnitId: AdUnits.regionUIBannerAdUnitId,
               //adUnitId: WristCheckConfig.prodBuild == false? adState.getTestAds : AdUnits.viewWatchBannerAdUnitId,
               //If the device screen is large enough display a larger ad on this screen
               size: AdSize.banner,
