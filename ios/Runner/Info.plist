@@ -32,6 +32,8 @@
 	<string>LaunchScreen</string>
 	<key>GADApplicationIdentifier</key>
 	<string>ca-app-pub-5693473214019178~4365038227</string>
+	<key>NSUserTrackingUsageDescription</key>
+    <string>This identifier will be used to deliver personalized ads to you.</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 	<key>UISupportedInterfaceOrientations</key>
