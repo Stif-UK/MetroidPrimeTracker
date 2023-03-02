@@ -59,7 +59,6 @@ class _ItemViewState extends State<ItemView> {
     _notes = widget.currentItem.description;
 
     return Scaffold(
-      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         title: Text(widget.currentItem.title),
       ),
