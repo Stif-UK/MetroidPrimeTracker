@@ -100,6 +100,7 @@ class _ItemViewState extends State<ItemView> {
                     child: Form(
                       key: _editKey,
                       child: TextFormField(
+                        textCapitalization: TextCapitalization.sentences,
                         initialValue: widget.currentItem.description,
                         enabled: true,
                         maxLines: 5,
