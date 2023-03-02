@@ -59,6 +59,7 @@ class _ItemViewState extends State<ItemView> {
     _notes = widget.currentItem.description;
 
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         title: Text(widget.currentItem.title),
       ),
@@ -102,9 +103,10 @@ class _ItemViewState extends State<ItemView> {
                       child: TextFormField(
                         initialValue: widget.currentItem.description,
                         enabled: true,
-                        maxLines: 7,
+                        maxLines: 5,
                         onSaved: (String? value){
                           value != null? _notes = value : _notes = "";
+                          FocusManager.instance.primaryFocus?.unfocus();
                         } ,
                         decoration: InputDecoration(
                             disabledBorder: OutlineInputBorder(
