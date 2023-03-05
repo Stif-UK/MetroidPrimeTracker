@@ -30,7 +30,7 @@ class MetroidPreferences {
 
   static bool? getAppReviewPrompted() => _preferences.getBool(_keyAppReviewPrompt);
 
-  static Future setAppReviewPrommpted(bool appReviewPrompted) async =>
+  static Future setAppReviewPrompted(bool appReviewPrompted) async =>
       await _preferences.setBool(_keyAppReviewPrompt, appReviewPrompted);
 
 }

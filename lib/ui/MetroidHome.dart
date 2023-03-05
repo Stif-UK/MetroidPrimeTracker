@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:metroid_prime_items/helper/startup_helper.dart';
 import 'package:metroid_prime_items/ui/ItemTypeUI.dart';
 import 'package:metroid_prime_items/ui/search.dart';
 import 'RegionsUI.dart';
@@ -23,6 +24,8 @@ class _MetroidHomeState extends State<MetroidHome> {
     if(Platform.isIOS) {
       AppTrackingTransparency.requestTrackingAuthorization();
     }
+
+    StartupHelper.runStartupCheck();
 
     return Scaffold(
       appBar: AppBar(
