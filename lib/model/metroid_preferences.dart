@@ -12,6 +12,7 @@ class MetroidPreferences {
   static const _keyOpenCount = 'openCount';
   static const _keyAppPurchased = 'appPurchased';
   static const _keyAppReviewPrompt = 'appReviewPrompt';
+  static const _keyLatestVersion = 'latestAppVersion';
 
 
   //Getters and setters
@@ -28,6 +29,13 @@ class MetroidPreferences {
   static Future setAppPurchasedStatus(bool appPurchased) async =>
       await _preferences.setBool(_keyAppPurchased, appPurchased);
 
+  //Getter and setter for latest app version String
+  static Future setLatestVersion(String latestVersion) async =>
+      await _preferences.setString(_keyLatestVersion, latestVersion);
+
+  static String? getLatestVersion() => _preferences.getString(_keyLatestVersion);
+
+  //Getter and setter for app review prompted bool
   static bool? getAppReviewPrompted() => _preferences.getBool(_keyAppReviewPrompt);
 
   static Future setAppReviewPrompted(bool appReviewPrompted) async =>
