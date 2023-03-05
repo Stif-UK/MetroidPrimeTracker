@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:get/get.dart';
+import 'package:metroid_prime_items/copy/whats_new_copy.dart';
 import 'package:metroid_prime_items/helper/item_helper.dart';
 
 class AboutAppCopy{
@@ -72,6 +74,16 @@ class AboutAppCopy{
 
     );
 
+  }
+
+  static getWhatsNewDialog(BuildContext context){
+    Get.defaultDialog(
+        title: "What's New?",
+        content: SizedBox(
+            width: (MediaQuery.of(context).size.width)*0.7,
+            height:(MediaQuery.of(context).size.width)*0.65,
+            child: Markdown(data: WhatsNewCopy.getLatestVersionCopy(),))
+    );
   }
 
 }

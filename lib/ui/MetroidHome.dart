@@ -25,7 +25,7 @@ class _MetroidHomeState extends State<MetroidHome> {
       AppTrackingTransparency.requestTrackingAuthorization();
     }
 
-    StartupHelper.runStartupCheck();
+    StartupHelper.runStartupCheck(context);
 
     return Scaffold(
       appBar: AppBar(

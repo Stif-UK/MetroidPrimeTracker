@@ -6,6 +6,7 @@ import 'package:metroid_prime_items/ui/privacy_policy.dart';
 import 'package:metroid_prime_items/ui/attributions.dart';
 import 'package:metroid_prime_items/ui/resetAll.dart';
 import 'package:get/get.dart';
+import 'package:metroid_prime_items/ui/version_history.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 
 class NavBar extends StatefulWidget {
@@ -74,6 +75,13 @@ class _NavBarState extends State<NavBar> {
                   trailing: const Icon(Icons.check_box_outlined),
                   onTap: (){
                     Get.to(() => const Attributions());
+                  },
+                ),
+                ListTile(
+                  title: const Text("Version History"),
+                  trailing: const Icon(Icons.history),
+                  onTap: (){
+                    Get.to(() => const VersionHistory());
                   },
                 ),
                 const SizedBox(height: 100,),
