@@ -49,6 +49,7 @@ dependencies:
   app_tracking_transparency: ^2.0.3
   purchases_flutter: ^4.10.2
   in_app_review: ^2.0.6
+  package_info_plus: ^3.0.3
 
 dev_dependencies:
   flutter_test:
