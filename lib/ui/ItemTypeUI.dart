@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
+import 'package:metroid_prime_items/controller/metroid_controller.dart';
 import 'package:metroid_prime_items/model/adUnits.dart';
 import 'package:metroid_prime_items/model/enums/item_type_enum.dart';
 import 'package:get/get.dart';
@@ -11,7 +12,8 @@ import 'package:metroid_prime_items/model/metroid_preferences.dart';
 import 'package:provider/provider.dart';
 
 class ItemsTypeUI extends StatefulWidget {
-  const ItemsTypeUI({Key? key}) : super(key: key);
+  ItemsTypeUI({Key? key}) : super(key: key);
+  final metroidController = Get.put(MetroidController());
 
   @override
   State<ItemsTypeUI> createState() => _ItemsTypeUIState();
@@ -255,7 +257,7 @@ class _ItemsTypeUIState extends State<ItemsTypeUI> {
           ),
         ),
         //insert ad
-        purchaseStatus? const SizedBox(height: 0,) : AdWidgetHelper.buildSmallAdSpace(banner, context),
+        widget.metroidController.isAppPro.value? const SizedBox(height: 0,) : AdWidgetHelper.buildSmallAdSpace(banner, context),
         const SizedBox(height: 50,)
       ],
     );

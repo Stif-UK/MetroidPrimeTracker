@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:metroid_prime_items/api/purchase_api.dart';
 import 'package:metroid_prime_items/helper/startup_helper.dart';
+import 'package:metroid_prime_items/model/metroid_preferences.dart';
 import 'package:metroid_prime_items/ui/ItemTypeUI.dart';
 import 'package:metroid_prime_items/ui/search.dart';
 import 'RegionsUI.dart';
@@ -23,6 +25,26 @@ class _MetroidHomeState extends State<MetroidHome> {
   Widget build(BuildContext context) {
     if(Platform.isIOS) {
       AppTrackingTransparency.requestTrackingAuthorization();
+    }
+
+    //Set first opened date on first app open
+    if(MetroidPreferences.getFirstUseDate() == null){
+      MetroidPreferences.setFirstUseDate(DateTime.now());
+    }
+
+    //If app is pro, check entitlement is still valid - check once per week
+    if(MetroidPreferences.getAppPurchasedStatus() == true){
+      final lastChecked = MetroidPreferences.getLastEntitlementCheckDate();
+      if(lastChecked == null){
+        PurchaseApi.checkEntitlements();
+      } else {
+        final date2 = DateTime.now();
+        final difference = date2.difference(lastChecked).inDays;
+        if(difference > 6){
+          PurchaseApi.checkEntitlements();
+        }
+      }
+
     }
 
     StartupHelper.runStartupCheck(context);
@@ -50,7 +72,7 @@ class _MetroidHomeState extends State<MetroidHome> {
         ],
       ),
       drawer: const NavBar(),
-      body: _showRegions? const RegionsUI(): const ItemsTypeUI(),
+      body: _showRegions? RegionsUI(): ItemsTypeUI(),
     );
   }
 }
