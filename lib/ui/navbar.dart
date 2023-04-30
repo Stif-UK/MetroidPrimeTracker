@@ -49,7 +49,7 @@ class _NavBarState extends State<NavBar> {
             onPressed: (){
                   clickCounter++;
                   if (clickCounter > 5) {
-                    Get.to(() => DeveloperStats());
+                    Get.to(() => const DeveloperStats());
                   }
             },
 
@@ -105,7 +105,7 @@ class _NavBarState extends State<NavBar> {
                 const SizedBox(height: 100,),
                 const Divider(thickness: 2,),
                 ListTile(
-                  title: const Text("Reset all Data"),
+                  title: const Text("Manage Data"),
                   trailing: const Icon(Icons.delete_outline),
                   onTap: (){
                     Get.to(() => const ResetAll());

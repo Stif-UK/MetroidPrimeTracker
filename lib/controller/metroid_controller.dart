@@ -11,13 +11,13 @@ class MetroidController extends GetxController{
   final isAppPro = MetroidPreferences.getAppPurchasedStatus()!.obs;
 
   //Calling updateAppPurchaseStatus triggers a call to the Purchases package which will update the app status
-  //based on whether the user holds the Air Fryr Pro entitlement.
+  //based on whether the user holds the MP Checklist Pro entitlement.
   updateAppPurchaseStatus() async {
     bool? isPro = false;
     try {
       print("Trying to check purchase status");
       CustomerInfo customerInfo = await Purchases.getCustomerInfo();
-      isPro = customerInfo.entitlements.all["AIr Fryr Pro"]?.isActive ;
+      isPro = customerInfo.entitlements.all["MP Checklist Pro"]?.isActive ;
       print("Entitlement checked value: $isPro");
     } on PlatformException catch (e) {
       MetroidErrorHandling.surfacePlatformError(e);

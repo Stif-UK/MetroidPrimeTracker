@@ -62,7 +62,7 @@ class PurchaseApi{
     bool? restoreSuccess = false;
     try {
       CustomerInfo customerInfo = await Purchases.restorePurchases();
-      restoreSuccess = customerInfo.entitlements.all["AIr Fryr Pro"]?.isActive ;
+      restoreSuccess = customerInfo.entitlements.all["MP Checklist Pro"]?.isActive ;
     } on PlatformException catch (e) {
       MetroidErrorHandling.handlePurchaseError(e);
     }
@@ -77,7 +77,7 @@ class PurchaseApi{
       print("Getting customer info");
       CustomerInfo customerInfo = await Purchases.getCustomerInfo();
       print("Checking entitlement is valid");
-      entitlementValid = customerInfo.entitlements.all["AIr Fryr Pro"]?.isActive ;
+      entitlementValid = customerInfo.entitlements.all["MP Checklist Pro"]?.isActive ;
       print("Status: $entitlementValid");
       MetroidPreferences.setLastEntitlementCheckDate(DateTime.now());
     } on PlatformException catch (e) {
@@ -108,7 +108,7 @@ class PurchaseApi{
   static showSuccessDialog(){
     Get.defaultDialog(
         title: "Payment Successful",
-        middleText: "Thank you for supporting Air Fryr!\n"
+        middleText: "Thank you for supporting MP Checklist!\n"
             "Your contribution helps me to keep the app going and is really appreciated.\n\n"
             "Got any feedback or ideas for improvement? Please leave an app review or drop me an email!"
 
