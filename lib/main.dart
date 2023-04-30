@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:metroid_prime_items/api/purchase_api.dart';
 import 'package:metroid_prime_items/helper/item_helper.dart';
 import 'package:metroid_prime_items/model/itemsmodel.dart';
 import 'package:metroid_prime_items/model/metroid_preferences.dart';
@@ -18,6 +19,8 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   final initFuture = MobileAds.instance.initialize();
   final adState = AdState(initFuture);
+  //Initialise RevenueCat
+  await PurchaseApi.init();
 
   await Hive.initFlutter();
 
@@ -31,6 +34,11 @@ void main() async {
   //TODO: Move box population into loading widget
   if(Hive.box<Items>("ItemBox").isEmpty){
     ItemGenerator.generateItems();
+  }
+
+  //Ensure app purchase status is instantiated in preferences
+  if(MetroidPreferences.getAppPurchasedStatus() == null){
+    MetroidPreferences.setAppPurchasedStatus(false);
   }
 
   //Track app open count

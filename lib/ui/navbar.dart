@@ -4,10 +4,12 @@ import 'package:metroid_prime_items/model/metroid_preferences.dart';
 import 'package:metroid_prime_items/ui/about_app.dart';
 import 'package:metroid_prime_items/ui/privacy_policy.dart';
 import 'package:metroid_prime_items/ui/attributions.dart';
+import 'package:metroid_prime_items/ui/remove_ads.dart';
 import 'package:metroid_prime_items/ui/resetAll.dart';
 import 'package:get/get.dart';
 import 'package:metroid_prime_items/ui/version_history.dart';
 import 'package:package_info_plus/package_info_plus.dart';
+import 'package:in_app_review/in_app_review.dart';
 
 class NavBar extends StatefulWidget {
   const NavBar({Key? key}) : super(key: key);
@@ -18,6 +20,7 @@ class NavBar extends StatefulWidget {
 
 class _NavBarState extends State<NavBar> {
 
+  final InAppReview inAppReview = InAppReview.instance;
   String _buildVersion = "Not Determined";
 
   @override
@@ -84,14 +87,36 @@ class _NavBarState extends State<NavBar> {
                     Get.to(() => const VersionHistory());
                   },
                 ),
+                const Divider(thickness: 2,),
+                ListTile(
+                  title: const Text("Leave an App Review"),
+                  trailing: const Icon(Icons.reviews_outlined),
+                  onTap: (){
+                    inAppReview.openStoreListing(
+                        appStoreId: "1672864012"
+                    );
+                  },
+                ),
+                const Divider(thickness: 2,),
+                ListTile(
+                  title: const Text("Remove Ads"),
+                  trailing: const Icon(Icons.money_off_csred_rounded),
+                  onTap: (){
+                    Get.to(() => RemoveAds());
+                  },
+                ),
+                const Divider(thickness: 2,),
                 const SizedBox(height: 100,),
+                const Divider(thickness: 2,),
                 ListTile(
                   title: const Text("Reset all Data"),
                   trailing: const Icon(Icons.delete_outline),
                   onTap: (){
                     Get.to(() => const ResetAll());
                   },
-                )
+                ),
+                const Divider(thickness: 2,),
+
               ],
             ),
           ),

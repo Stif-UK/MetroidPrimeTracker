@@ -13,6 +13,7 @@ class MetroidPreferences {
   static const _keyAppPurchased = 'appPurchased';
   static const _keyAppReviewPrompt = 'appReviewPrompt';
   static const _keyLatestVersion = 'latestAppVersion';
+  static const _keyLastEntitlementCheck = 'lastEntitlementCheck';
 
 
   //Getters and setters
@@ -40,5 +41,15 @@ class MetroidPreferences {
 
   static Future setAppReviewPrompted(bool appReviewPrompted) async =>
       await _preferences.setBool(_keyAppReviewPrompt, appReviewPrompted);
+
+  //Getter and Setter for last entitlement check date
+  static DateTime? getLastEntitlementCheckDate() {
+    String? returnString = _preferences.getString(_keyLastEntitlementCheck);
+    return returnString == null? null : DateTime.parse(returnString);
+  }
+
+  static Future setLastEntitlementCheckDate(DateTime lastEntitlementCheck) async{
+    await _preferences.setString(_keyLastEntitlementCheck, lastEntitlementCheck.toString());
+  }
 
 }
