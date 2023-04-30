@@ -145,7 +145,7 @@ class _ItemListViewState extends State<ItemListView> {
           ),
           //insert ad
           purchaseStatus? const SizedBox(height: 0,) : AdWidgetHelper.buildSmallAdSpace(banner, context),
-          const SizedBox(height: 50,)
+          purchaseStatus? const SizedBox(height: 0,): const SizedBox(height: 50,)
         ],
       ),
     );

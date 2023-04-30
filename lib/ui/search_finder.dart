@@ -99,7 +99,7 @@ class _SearchFinderState extends State<SearchFinder> {
         ),
         //insert ad
         purchaseStatus? const SizedBox(height: 0,) : AdWidgetHelper.buildSmallAdSpace(banner, context),
-        const SizedBox(height: 50,)
+        purchaseStatus? const SizedBox(height: 0): const SizedBox(height: 50,)
       ],
     );
   }
