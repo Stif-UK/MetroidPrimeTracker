@@ -51,7 +51,7 @@ class AboutAppCopy{
   static Widget getResetAllCopy(){
     return const Padding(
       padding: EdgeInsets.all(12.0),
-      child: Text("Press the button below to reset all data to 0% completion \n\nThis cannot be undone!",
+      child: Text("The buttons below allow all collection to be reset to 0% and (separately) all notes to be cleared. \n\nThis cannot be undone!",
         textAlign: TextAlign.center,
         style: TextStyle(fontSize: 20,),
     ));
@@ -70,10 +70,24 @@ class AboutAppCopy{
         ItemHelper.resetAllData();
         Get.back();
       },
-      onCancel: () => Get.back(),
-
+      //onCancel: () => Get.back(),
     );
+  }
 
+  static getResetNotesDialog(BuildContext context){
+    Get.defaultDialog(
+      title: "Reset All Notes",
+      middleText: "Are you Sure? This will clear all notes and cannot be undone.",
+      textConfirm: "Yes",
+      textCancel: "No Thanks",
+      confirmTextColor: Colors.white,
+      buttonColor: Colors.lightBlueAccent,
+      onConfirm: () {
+        ItemHelper.resetAllNotes();
+        Get.back();
+      },
+      //onCancel: () => Get.back(),
+    );
   }
 
   static getWhatsNewDialog(BuildContext context){

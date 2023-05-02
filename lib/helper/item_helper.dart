@@ -293,8 +293,16 @@ class ItemHelper {
       currentItem?.collected = false;
       currentItem?.save();
     }
+  }
 
-
+  static resetAllNotes(){
+    final Box<Items> box = ItemHelper.getItems();
+    int size = box.length;
+    for(var index = 0; index < size; index++){
+      Items? currentItem = box.getAt(index);
+      currentItem?.description = "";
+      currentItem?.save();
+    }
   }
 
 }
