@@ -95,7 +95,7 @@ class AboutAppCopy{
         title: "What's New?",
         content: SizedBox(
             width: (MediaQuery.of(context).size.width)*0.7,
-            height:(MediaQuery.of(context).size.width)*0.65,
+            height:(MediaQuery.of(context).size.height)*0.55,
             child: Markdown(data: WhatsNewCopy.getLatestVersionCopy(),))
     );
   }
