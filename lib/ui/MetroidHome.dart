@@ -71,7 +71,7 @@ class _MetroidHomeState extends State<MetroidHome> {
           )
         ],
       ),
-      drawer: const NavBar(),
+      drawer: NavBar(),
       body: _showRegions? RegionsUI(): ItemsTypeUI(),
     );
   }
