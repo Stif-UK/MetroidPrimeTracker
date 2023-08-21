@@ -5,12 +5,13 @@ class WhatsNewCopy{
 
   static String getLatestVersionCopy(){
     return
-        "### Version 1.3.0 \n"
+        "### Version 1.3.1 \n"
         "\n"
 
-        "* Improved options to clear collection \n"
-        "* Added link to review app in sidebar\n"
-        "* Added the option to remove ads\n"
+        "* Mainly behind the scenes required updates \n"
+        "* Update to Google Admob SDK version\n"
+        "* Update to Revenuecat SDK version\n"
+        "* Update to target OS platforms"
         "* (see full details in version history)\n\n"
         "${getFooter()}";
   }

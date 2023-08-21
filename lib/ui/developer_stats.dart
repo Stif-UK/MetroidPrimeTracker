@@ -26,6 +26,7 @@ class _DeveloperStatsState extends State<DeveloperStats> {
         title: const Text("Developer Stats"),
       ),
       body: SingleChildScrollView(
+        physics: const AlwaysScrollableScrollPhysics(),
         child: ListView(
           shrinkWrap: true,
           children: [
@@ -142,6 +143,15 @@ class _DeveloperStatsState extends State<DeveloperStats> {
             ),
             const Divider(thickness: 2,),
             ListTile(
+              title: Text("Show what's new dialog"),
+              subtitle: Text("Trigger the what's new pop-up for testing purposes"),
+              onTap: (){
+                AboutAppCopy.getWhatsNewDialog(context);
+                //StartupChecksUtil.showWhatsNewDialog();
+              },
+            ),
+            const Divider(thickness: 2,),
+            ListTile(
               title: const Text("Revert Purchase Status"),
               subtitle: const Text("Remove pro option and show ads by clicking here. If done in error purchases can be restored on the 'remove ads' page"),
               onTap: (){
@@ -201,14 +211,7 @@ class _DeveloperStatsState extends State<DeveloperStats> {
 
             ),
             const Divider(thickness: 2,),
-            ListTile(
-              title: Text("Show what's new dialog"),
-              subtitle: Text("Trigger the what's new pop-up for testing purposes"),
-              onTap: (){
-                AboutAppCopy.getWhatsNewDialog(context);
-                //StartupChecksUtil.showWhatsNewDialog();
-              },
-            ),
+
 
 
           ],
