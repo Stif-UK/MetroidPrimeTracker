@@ -11,7 +11,7 @@ class WhatsNewCopy{
         "* Mainly behind the scenes required updates \n"
         "* Update to Google Admob SDK version\n"
         "* Update to Revenuecat SDK version\n"
-        "* Update to target OS platforms"
+        "* Update to target OS platforms\n"
         "* (see full details in version history)\n\n"
         "${getFooter()}";
   }
@@ -32,13 +32,21 @@ class WhatsNewCopy{
         child: const Markdown(
           physics: ClampingScrollPhysics(),
             data:
-            "### Version 1.3.0 \n"
+            "### Latest: Version 1.3.1 \n"
+                "\n"
+
+                "* Behind the scenes mandatory updates \n"
+                "* Update to Google Admob SDK\n"
+                "* Update to Revenuecat SDK\n"
+                "* Update to target OS versions\n\n"
+                " --- \n\n "
+
+                "### Version 1.3.0 \n"
                 "\n"
 
                 "* Improved options to clear collection \n"
                 "* Added link to review app in sidebar\n"
                 "* Added the option to remove ads\n\n"
-                " --- \n\n "
             "### Version 1.2.1 \n"
                 "\n"
 

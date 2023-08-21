@@ -19,17 +19,61 @@ class _DeveloperStatsState extends State<DeveloperStats> {
   @override
   Widget build(BuildContext context) {
     final metroidController = Get.put(MetroidController());
-    //TODO: Re-order page to enable access to items below the fold due to force scroll issue on small screens
 
     return Scaffold(
       appBar: AppBar(
         title: const Text("Developer Stats"),
       ),
-      body: SingleChildScrollView(
-        physics: const AlwaysScrollableScrollPhysics(),
+      body: Container(
+        height: MediaQuery.of(context).size.height,
         child: ListView(
-          shrinkWrap: true,
+          shrinkWrap: false,
           children: [
+            FutureBuilder(
+              builder: (context, snapshot){
+                if (snapshot.connectionState == ConnectionState.done) {
+                  // If we got an error
+                  if (snapshot.hasError) {
+                    return ListTile(
+                      title: Text('${snapshot.error} occurred'),
+                    );
+
+                    // if we got our data
+                  } else if (snapshot.hasData) {
+                    // Extracting data from snapshot object
+                    final data = snapshot.data as String;
+                    return ListTile(
+                      title: const Text("App User ID"),
+                      subtitle: Text(
+                        '$data',
+
+                      ),
+                      trailing: IconButton(
+                        icon: Icon(Icons.copy),
+                        onPressed: (){
+                          //Copy the appUserID to the clipboard
+                          Clipboard.setData(ClipboardData(text:'$data'));
+                          Get.snackbar(
+                              "Copied",
+                              "appUserID saved to clipboard",
+                              icon: Icon(Icons.copy),
+                              snackPosition: SnackPosition.BOTTOM
+                          );
+
+                        },
+                      ),
+                    );
+                  }
+                }
+                return ListTile(
+                  title: const Text("App User ID"),
+                  trailing: CircularProgressIndicator(),
+                );
+
+              },
+              future: PurchaseApi.getAppUserID(),
+
+            ),
             const Divider(thickness: 2,),
             ListTile(
               title: const Text("Open Count"),
@@ -165,52 +209,7 @@ class _DeveloperStatsState extends State<DeveloperStats> {
               },
             ),
             const Divider(thickness: 2,),
-            FutureBuilder(
-              builder: (context, snapshot){
-                if (snapshot.connectionState == ConnectionState.done) {
-                  // If we got an error
-                  if (snapshot.hasError) {
-                    return ListTile(
-                      title: Text('${snapshot.error} occurred'),
-                    );
 
-                    // if we got our data
-                  } else if (snapshot.hasData) {
-                    // Extracting data from snapshot object
-                    final data = snapshot.data as String;
-                    return ListTile(
-                      title: const Text("App User ID"),
-                      subtitle: Text(
-                        '$data',
-
-                      ),
-                      trailing: IconButton(
-                        icon: Icon(Icons.copy),
-                        onPressed: (){
-                          //Copy the appUserID to the clipboard
-                          Clipboard.setData(ClipboardData(text:'$data'));
-                          Get.snackbar(
-                            "Copied",
-                             "appUserID saved to clipboard",
-                            icon: Icon(Icons.copy),
-                            snackPosition: SnackPosition.BOTTOM
-                          );
-
-                        },
-                      ),
-                    );
-                  }
-                }
-                return ListTile(
-                  title: const Text("App User ID"),
-                  trailing: CircularProgressIndicator(),
-                );
-
-              },
-              future: PurchaseApi.getAppUserID(),
-
-            ),
-            const Divider(thickness: 2,),
 
 
 
