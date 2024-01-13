@@ -5,6 +5,7 @@ import 'package:metroid_prime_items/copy/remove_ads_copy.dart';
 import 'package:metroid_prime_items/model/metroid_preferences.dart';
 import 'package:metroid_prime_items/ui/about_app.dart';
 import 'package:metroid_prime_items/ui/developer_stats.dart';
+import 'package:metroid_prime_items/ui/privacy_landing.dart';
 import 'package:metroid_prime_items/ui/privacy_policy.dart';
 import 'package:metroid_prime_items/ui/attributions.dart';
 import 'package:metroid_prime_items/ui/remove_ads.dart';
@@ -59,10 +60,10 @@ class _NavBarState extends State<NavBar> {
             )),
 
                 ListTile(
-                  title: const Text("Privacy Policy"),
+                  title: const Text("Privacy"),
                   trailing: const Icon(Icons.privacy_tip_outlined),
                   onTap: (){
-                    Get.to(() => PrivacyPolicy());
+                    Get.to(() => const PrivacyLanding());
                   },
                 ),
                 ListTile(
