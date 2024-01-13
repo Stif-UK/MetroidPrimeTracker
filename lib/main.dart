@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:metroid_prime_items/api/purchase_api.dart';
-import 'package:metroid_prime_items/helper/item_helper.dart';
 import 'package:metroid_prime_items/model/itemsmodel.dart';
 import 'package:metroid_prime_items/model/metroid_preferences.dart';
 import 'package:metroid_prime_items/theme/theme_constants.dart';
 import 'package:metroid_prime_items/ui/MetroidHome.dart';
-import 'dart:async';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
+import 'package:metroid_prime_items/ui/initialise_screen.dart';
 import 'package:provider/provider.dart';
 import 'provider/adstate.dart';
 
@@ -58,7 +57,7 @@ void main() async {
       themeMode: ThemeMode.system,
 
 
-      home:  MetroidHome(),
+      home:  const InitialiseScreen(targetWidget: MetroidHome())
     ),
   ));
 }
