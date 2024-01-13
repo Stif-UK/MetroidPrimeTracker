@@ -50,6 +50,30 @@ class InitialisationHelper {
 
   }
 
+  Future<bool> changePrivacyPreferences() async {
+    final completer = Completer<bool>();
+
+    ConsentInformation.instance.requestConsentInfoUpdate(ConsentRequestParameters(), () async {
+      if (await ConsentInformation.instance.isConsentFormAvailable()) {
+        ConsentForm.loadConsentForm((consentForm) {
+          consentForm.show((formError) async {
+            await _initialise();
+            completer.complete(true);
+          });
+        }, (formError) {
+          completer.complete(false);
+        });
+      }
+      else {
+        completer.complete(false);
+      }
+    }, (error) {
+      completer.complete(false);
+    });
+
+    return completer.future;
+  }
+
   Future<void> _initialise() async {
     await MobileAds.instance.initialize();
   }
