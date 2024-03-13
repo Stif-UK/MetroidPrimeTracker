@@ -23,9 +23,9 @@ class _MetroidHomeState extends State<MetroidHome> {
 
   @override
   Widget build(BuildContext context) {
-    if(Platform.isIOS) {
-      AppTrackingTransparency.requestTrackingAuthorization();
-    }
+    // if(Platform.isIOS) {
+    //   AppTrackingTransparency.requestTrackingAuthorization();
+    // }
 
     //Set first opened date on first app open
     if(MetroidPreferences.getFirstUseDate() == null){
@@ -72,8 +72,46 @@ class _MetroidHomeState extends State<MetroidHome> {
         ],
       ),
       drawer: NavBar(),
-      body: _showRegions? RegionsUI(): ItemsTypeUI(),
+      body: FutureBuilder(
+        builder: (context, snapshot){
+          if (snapshot.connectionState == ConnectionState.done) {
+            // If we got an error
+            if (snapshot.hasError) {
+              return ListTile(
+                title: Text('${snapshot.error} occurred'),
+              );
+
+              // if we got our data
+            } else if (snapshot.hasData) {
+              //display the appropriate home screen
+              return _showRegions? RegionsUI(): ItemsTypeUI();
+            }
+          }
+          return const ListTile(
+            title: Text("Loading..."),
+            trailing: CircularProgressIndicator(),
+          );
+
+        },
+        future: checkATT(),
+
+      )
     );
+  }
+
+  Future<int> checkATT() async {
+    if(Platform.isIOS) {
+      print("Tracking status: ${await AppTrackingTransparency.trackingAuthorizationStatus}");
+      while(WidgetsBinding.instance.lifecycleState != AppLifecycleState.resumed){
+        Future.delayed(const Duration(milliseconds: 400));
+      }
+      if(await AppTrackingTransparency.trackingAuthorizationStatus == TrackingStatus.notDetermined){
+        AppTrackingTransparency.requestTrackingAuthorization();
+        await Future.delayed(const Duration(milliseconds: 15000));
+      }
+
+    }
+    return 1;
   }
 }
 

@@ -4,6 +4,7 @@
 
 import 'dart:async';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
+import 'package:metroid_prime_items/model/metroid_preferences.dart';
 
 class InitialisationHelper {
   Future<FormError?> initialise() async {
@@ -16,6 +17,7 @@ class InitialisationHelper {
       // ),
     );
     ConsentInformation.instance.requestConsentInfoUpdate(params, () async {
+
       //isConsentFormAvailable will return false where a user is outside GDPR locations
       if(await ConsentInformation.instance.isConsentFormAvailable()){
         await _loadConsentForm();
