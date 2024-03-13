@@ -6,6 +6,7 @@ import 'package:metroid_prime_items/controller/metroid_controller.dart';
 import 'package:metroid_prime_items/copy/aboutapp_copy.dart';
 import 'package:metroid_prime_items/model/metroid_preferences.dart';
 import 'package:metroid_prime_items/helper/text_helper.dart';
+import 'package:metroid_prime_items/ui/first_use_demo/onboarding.dart';
 
 
 class DeveloperStats extends StatefulWidget {
@@ -206,6 +207,14 @@ class _DeveloperStatsState extends State<DeveloperStats> {
                     icon: const Icon(Icons.no_accounts),
                     snackPosition: SnackPosition.BOTTOM
                 );
+              },
+            ),
+            const Divider(thickness: 2,),
+            ListTile(
+              title: Text("Show onboarding demo"),
+              subtitle: Text("Trigger the first use demo slideshow"),
+              onTap: (){
+                Get.to(() => const MetroidOnboarding());
               },
             ),
             const Divider(thickness: 2,),

@@ -15,6 +15,7 @@ class MetroidPreferences {
   static const _keyLatestVersion = 'latestAppVersion';
   static const _keyFirstUseDate = 'firstUseDate';
   static const _keyLastEntitlementCheck = 'lastEntitlementCheck';
+  static const _keyFirstDemo = 'firstUseDemo';
 
 
   //Getters and setters
@@ -62,5 +63,12 @@ class MetroidPreferences {
   static Future setLastEntitlementCheckDate(DateTime lastEntitlementCheck) async{
     await _preferences.setString(_keyLastEntitlementCheck, lastEntitlementCheck.toString());
   }
+
+  //Getter and setter for first use demo
+  static Future setHasSeenDemo(bool hasSeenDemo) async =>
+      await _preferences.setBool(_keyFirstDemo, hasSeenDemo);
+
+  static bool? getHasSeenDemo() => _preferences.getBool(_keyFirstDemo);
+
 
 }
