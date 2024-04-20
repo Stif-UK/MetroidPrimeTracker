@@ -48,17 +48,17 @@ class _MetroidOnboardingState extends State<MetroidOnboarding> {
                 subtitle: "Track your way to 100%!\nSwipe to learn what MP Checklist can do..."),
             buildPage(
                 colour: Theme.of(context).canvasColor,
-                urlImage: Get.isDarkMode? 'assets/demo/calculator_dark.png':'assets/demo/calculator_light.png',
+                urlImage: Get.isDarkMode? 'assets/demo/regions_dark.png':'assets/demo/regions_light.png',
                 title: "Regions",
                 subtitle: "Track progression through the regions of Tallon IV"),
             buildPage(
                 colour: Theme.of(context).canvasColor,
-                urlImage: Get.isDarkMode? 'assets/demo/notes_dark.png': 'assets/demo/notes_light.png',
+                urlImage: Get.isDarkMode? 'assets/demo/items_dark.png': 'assets/demo/items_light.png',
                 title: "Item Types",
                 subtitle: "...or track by collectable type \n"),
             buildPage(
                 colour: Theme.of(context).canvasColor,
-                urlImage: Get.isDarkMode? 'assets/demo/temperature_dark.png':'assets/demo/temperature_light.png',
+                urlImage: Get.isDarkMode? 'assets/demo/search_dark.png':'assets/demo/search_light.png',
                 title: "Search by Room",
                 subtitle: "Found an item?\nQuickly search the in-game room name to log it!"),
           ],
