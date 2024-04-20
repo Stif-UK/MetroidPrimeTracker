@@ -5,11 +5,11 @@ class WhatsNewCopy{
 
   static String getLatestVersionCopy(){
     return
-        "### Version 1.3.2 \n"
+        "### Version 1.4.0 \n"
         "\n"
 
-        "* Implemented GDPR compliance dialog for European users \n"
-        "* Implemented ability for all users to opt out of ad personalisation via privacy settings page \n"
+        "* Implemented a first use demo \n"
+        "* Bug fix: Corrected room name for Artifact of Spirit \n"
         "* (see full details in version history)\n\n"
         "${getFooter()}";
   }
@@ -30,12 +30,17 @@ class WhatsNewCopy{
         child: const Markdown(
           physics: ClampingScrollPhysics(),
             data:
-            "### Latest: Version 1.3.2 \n"
+            "### Latest: Version 1.4.0\n"
+                "* Implemented a first use demo \n"
+        "* Bug fix: Corrected room name for Artifact of Spirit \n"
+            
+                " --- \n\n "
+                "Version 1.3.2 \n"
         "\n"
 
         "* Implemented GDPR compliance dialog for European users \n"
         "* Implemented ability for all users to opt out of ad personalisation via privacy settings page \n"
-                " --- \n\n "
+
 
                 "Version 1.3.1 \n"
                 "\n"
