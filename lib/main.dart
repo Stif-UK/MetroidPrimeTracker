@@ -8,6 +8,7 @@ import 'package:metroid_prime_items/ui/MetroidHome.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
+import 'package:metroid_prime_items/ui/first_use_demo/onboarding.dart';
 import 'package:metroid_prime_items/ui/initialise_screen.dart';
 import 'package:provider/provider.dart';
 import 'provider/adstate.dart';
@@ -45,6 +46,9 @@ void main() async {
     MetroidPreferences.setOpenCount(1):
       MetroidPreferences.setOpenCount(MetroidPreferences.getOpenCount()! + 1);
 
+  //Check if user has seen the first use demo
+  final hasSeenDemo = MetroidPreferences.getHasSeenDemo() ?? false;
+
   runApp(
       Provider.value(
         value: adState,
@@ -57,7 +61,7 @@ void main() async {
       themeMode: ThemeMode.system,
 
 
-      home:  const InitialiseScreen(targetWidget: MetroidHome())
+      home: hasSeenDemo? const InitialiseScreen(targetWidget: MetroidHome()) : const MetroidOnboarding(),
     ),
   ));
 }
