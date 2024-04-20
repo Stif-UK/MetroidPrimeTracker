@@ -176,7 +176,7 @@ class ItemGenerator{
     ItemHelper.addItem("Energy Tank", RegionEnum.phendrana_drifts, "Transport Access", ItemTypeEnum.energy_tank);
     ItemHelper.addItem("Artifact of Elder", RegionEnum.phendrana_drifts, "Control Tower", ItemTypeEnum.artefact);
     ItemHelper.addItem("Artifact of Sun", RegionEnum.phendrana_drifts, "Chozo Ice Temple", ItemTypeEnum.artefact);
-    ItemHelper.addItem("Artifact of Spirit", RegionEnum.phendrana_drifts, "Storage Cavern", ItemTypeEnum.artefact);
+    ItemHelper.addItem("Artifact of Spirit", RegionEnum.phendrana_drifts, "Storage Cave", ItemTypeEnum.artefact);
 
 
 
