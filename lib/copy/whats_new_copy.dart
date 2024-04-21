@@ -33,7 +33,7 @@ class WhatsNewCopy{
             "### Latest: Version 1.4.0\n"
                 "* Implemented a first use demo \n"
         "* Bug fix: Corrected room name for Artifact of Spirit \n"
-            
+
                 " --- \n\n "
                 "Version 1.3.2 \n"
         "\n"
