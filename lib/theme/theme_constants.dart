@@ -13,7 +13,6 @@ ThemeData darkTheme = ThemeData(
   brightness: Brightness.dark,
   disabledColor: Colors.grey,
   canvasColor: Colors.black,
-  backgroundColor: Colors.black12,
   primaryColor: Colors.black,
   hintColor: Colors.lightBlue,
 
