@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:metroid_prime_items/api/purchase_api.dart';
 import 'package:metroid_prime_items/controller/metroid_controller.dart';
 import 'package:metroid_prime_items/copy/remove_ads_copy.dart';
+import 'package:metroid_prime_items/helper/item_helper.dart';
 import 'package:metroid_prime_items/ui/widgets/paywall_widget.dart';
 
 class RemoveAds extends StatefulWidget {
@@ -19,7 +20,7 @@ class _RemoveAdsState extends State<RemoveAds> {
     return Obx(
           () => Scaffold(
           appBar: AppBar(
-            title: widget.metroidController.isAppPro.value? RemoveAdsCopy.getPageTitleSupporter() :RemoveAdsCopy.getPageTitle(),
+            title: widget.metroidController.isAppPro.value || ItemHelper.isPrimeCollectionComplete()? RemoveAdsCopy.getPageTitleSupporter() :RemoveAdsCopy.getPageTitle(),
           ),
           body: SingleChildScrollView(
             child: Column(
