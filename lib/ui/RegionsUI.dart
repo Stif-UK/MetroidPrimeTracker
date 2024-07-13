@@ -261,7 +261,7 @@ class _RegionsUIState extends State<RegionsUI> {
             ),
           ),
           //insert ad
-          widget.metroidController.isAppPro.value? const SizedBox(height: 0,) : AdWidgetHelper.buildSmallAdSpace(banner, context),
+          widget.metroidController.isAppPro.value || widget.metroidController.isDrawerOpen.value? const SizedBox(height: 0,) : AdWidgetHelper.buildSmallAdSpace(banner, context),
           const SizedBox(height: 50,)
         ],
       ),
