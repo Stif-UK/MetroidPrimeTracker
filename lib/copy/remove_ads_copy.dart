@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:metroid_prime_items/helper/item_helper.dart';
 
 class RemoveAdsCopy{
 
@@ -11,7 +12,16 @@ class RemoveAdsCopy{
   }
 
   static getRemoveAdsMainCopy(BuildContext context){
-    return Text(
+    return ItemHelper.isPrimeCollectionComplete()?
+        //If the user has collected 100% items, change page copy
+    Text(
+      "Congratulations on reaching 100% completion of Metroid Prime!\n\n"
+      "I build little apps for fun, and provide them completely free, with ads displayed to help me cover the development fees."
+          "\n\nHowever, for a niche app these generate only a very small amount, and to keep MP Checklist alive I need to make regular updates which take time and effort.\n\n"
+          "If you found the app useful in your adventure, please consider making a small donation to  help me keep it alive - thank you!"
+          ,
+      style: Theme.of(context).textTheme.bodyLarge,)
+        : Text(
       "I build little apps for fun, and provide them completely free, with ads displayed to help me cover the development fees."
           "\n\nHowever if you would like to support the app development and remove ads, you can click below to see in-app purchase "
           "options."
