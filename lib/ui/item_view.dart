@@ -88,6 +88,7 @@ class _ItemViewState extends State<ItemView> {
                       setState(() {
                         widget.currentItem.collected = value;
                         widget.currentItem.save();
+                        print("Is item collection complete: ${ItemHelper.isPrimeCollectionComplete()}");
                       });
                       }),
                   const Divider(thickness: 2,),

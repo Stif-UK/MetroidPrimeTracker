@@ -284,6 +284,15 @@ class ItemHelper {
     int returnvalue =  (preliminary*100).round();
     return returnvalue;
   }
+  
+  static bool isPrimeCollectionComplete(){
+    
+   return  getItemCompletionInt(ItemTypeEnum.missile_expansion) == 100 &&
+    getItemCompletionInt(ItemTypeEnum.energy_tank) == 100 &&
+    getItemCompletionInt(ItemTypeEnum.power_bomb_upgrade) == 100 &&
+    getItemCompletionInt(ItemTypeEnum.artefact) == 100 &&
+    getItemCompletionInt(ItemTypeEnum.upgrade) == 100;
+  }
 
   static resetAllData(){
     final Box<Items> box = ItemHelper.getItems();

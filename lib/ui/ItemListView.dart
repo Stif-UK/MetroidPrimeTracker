@@ -121,6 +121,7 @@ class _ItemListViewState extends State<ItemListView> {
                             setState(() {
                               currentItem.collected = !currentItem.collected;
                               currentItem.save();
+                              print("Is item collection complete: ${ItemHelper.isPrimeCollectionComplete()}");
                             });
                           } ,
                         ),
