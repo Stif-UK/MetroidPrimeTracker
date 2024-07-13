@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:metroid_prime_items/controller/metroid_controller.dart';
 import 'package:metroid_prime_items/helper/item_generator.dart';
 import 'package:metroid_prime_items/model/itemsmodel.dart';
 import 'package:metroid_prime_items/model/enums/region_enum.dart';
@@ -7,6 +8,7 @@ import 'package:hive/hive.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:metroid_prime_items/model/itemsmodel.dart';
+import 'package:metroid_prime_items/ui/remove_ads.dart';
 
 
 
@@ -296,14 +298,22 @@ class ItemHelper {
   }
 
   static triggerCompleteDialog(BuildContext context){
+    final mpController = Get.put(MetroidController());
+
     Get.defaultDialog(
         title: "Collection Complete!",
         content: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           mainAxisSize: MainAxisSize.min,
           children: [
-            Text("You've recorded 100% of items, congratulations!", style: Theme.of(context).textTheme.bodyLarge,),
-            Text("Before enjoying the good ending, if you found the app useful please consider making a donation to help keep it alive", style: Theme.of(context).textTheme.bodyLarge),
+            Text("You've recorded 100% of items, congratulations!", style: Theme.of(context).textTheme.bodyLarge,textAlign: TextAlign.center,),
+            mpController.isAppPro.value? const SizedBox(height: 0,): Padding(
+              padding: const EdgeInsets.fromLTRB(0.0, 20.0, 0.0, 20.0),
+              child: Text("Before enjoying the good ending, if you found the app useful please consider making a donation to help keep it alive", style: Theme.of(context).textTheme.bodyLarge, textAlign: TextAlign.center,),
+            ),
+            mpController.isAppPro.value? const SizedBox(height: 0,) : ElevatedButton(
+                child: const Text("Donate"),
+              onPressed: () => Get.to(() => RemoveAds()), )
           ],
         )
     );
