@@ -1,3 +1,4 @@
+import 'package:get/get.dart';
 import 'package:metroid_prime_items/helper/item_generator.dart';
 import 'package:metroid_prime_items/model/itemsmodel.dart';
 import 'package:metroid_prime_items/model/enums/region_enum.dart';
@@ -292,6 +293,20 @@ class ItemHelper {
     getItemCompletionInt(ItemTypeEnum.power_bomb_upgrade) == 100 &&
     getItemCompletionInt(ItemTypeEnum.artefact) == 100 &&
     getItemCompletionInt(ItemTypeEnum.upgrade) == 100;
+  }
+
+  static triggerCompleteDialog(BuildContext context){
+    Get.defaultDialog(
+        title: "Collection Complete!",
+        content: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text("You've recorded 100% of items, congratulations!", style: Theme.of(context).textTheme.bodyLarge,),
+            Text("Before enjoying the good ending, if you found the app useful please consider making a donation to help keep it alive", style: Theme.of(context).textTheme.bodyLarge),
+          ],
+        )
+    );
   }
 
   static resetAllData(){
