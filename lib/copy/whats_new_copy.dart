@@ -31,7 +31,12 @@ class WhatsNewCopy{
         child: const Markdown(
           physics: ClampingScrollPhysics(),
             data:
-            "### Latest: "
+            "### Latest: Version 1.5.0 \n"
+                "\n"
+
+                "* Trigger a prompt when 100% completion is reached! \n"
+                "* Update to target OS versions \n"
+                "* Update to latest library versions \n"
                 " --- \n\n "
                 "Version 1.4.0\n"
                 "* Implemented a first use demo \n"
