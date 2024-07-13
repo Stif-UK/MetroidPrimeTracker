@@ -5,11 +5,12 @@ class WhatsNewCopy{
 
   static String getLatestVersionCopy(){
     return
-        "### Version 1.4.0 \n"
+        "### Version 1.5.0 \n"
         "\n"
 
-        "* Implemented a first use demo \n"
-        "* Bug fix: Corrected room name for Artifact of Spirit \n"
+        "* Trigger a prompt when 100% completion is reached! \n"
+        "* Update to target OS versions \n"
+            "* Update to latest library versions \n"
         "* (see full details in version history)\n\n"
         "${getFooter()}";
   }
@@ -30,7 +31,9 @@ class WhatsNewCopy{
         child: const Markdown(
           physics: ClampingScrollPhysics(),
             data:
-            "### Latest: Version 1.4.0\n"
+            "### Latest: "
+                " --- \n\n "
+                "Version 1.4.0\n"
                 "* Implemented a first use demo \n"
         "* Bug fix: Corrected room name for Artifact of Spirit \n"
 
@@ -41,7 +44,7 @@ class WhatsNewCopy{
         "* Implemented GDPR compliance dialog for European users \n"
         "* Implemented ability for all users to opt out of ad personalisation via privacy settings page \n"
 
-
+                " --- \n\n "
                 "Version 1.3.1 \n"
                 "\n"
 
@@ -49,13 +52,14 @@ class WhatsNewCopy{
                 "* Update to Google Admob SDK\n"
                 "* Update to Revenuecat SDK\n"
                 "* Update to target OS versions\n\n"
-
+                " --- \n\n "
                 "### Version 1.3.0 \n"
                 "\n"
 
                 "* Improved options to clear collection \n"
                 "* Added link to review app in sidebar\n"
                 "* Added the option to remove ads\n\n"
+                " --- \n\n "
             "### Version 1.2.1 \n"
                 "\n"
 
@@ -63,7 +67,7 @@ class WhatsNewCopy{
                 "* Makes notes to help find items\n"
                 "* Search by map location to list items\n"
                 "\n\n"
-
+                " --- \n\n "
             "### Version 1.0 \n"
                 "\n"
 
