@@ -31,4 +31,13 @@ class MetroidController extends GetxController{
     await MetroidPreferences.setAppPurchasedStatus(false);
 
   }
+
+  //Status of navigation drawer
+  final isDrawerOpen = false.obs;
+
+  updateIsDrawerOpen(bool isOpen) {
+    isDrawerOpen(isOpen);
+    print("Drawer changed $isOpen");
+  }
+
 }

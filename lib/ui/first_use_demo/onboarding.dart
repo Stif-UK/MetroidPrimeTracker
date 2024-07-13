@@ -79,7 +79,7 @@ class _MetroidOnboardingState extends State<MetroidOnboarding> {
             style: TextStyle(fontSize: 22),),
           onPressed: () async {
             await MetroidPreferences.setHasSeenDemo(true);
-            Get.off(()=> const InitialiseScreen(targetWidget: MetroidHome()));
+            Get.off(()=> InitialiseScreen(targetWidget: MetroidHome()));
           },
         ),
       ) :Container(

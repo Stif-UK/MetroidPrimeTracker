@@ -71,7 +71,7 @@ void main() async {
       themeMode: ThemeMode.system,
 
 
-      home: hasSeenDemo? const InitialiseScreen(targetWidget: MetroidHome()) : const MetroidOnboarding(),
+      home: hasSeenDemo? InitialiseScreen(targetWidget: MetroidHome()) : const MetroidOnboarding(),
     ),
   ));
 }

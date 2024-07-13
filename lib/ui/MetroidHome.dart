@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:metroid_prime_items/api/purchase_api.dart';
+import 'package:metroid_prime_items/controller/metroid_controller.dart';
 import 'package:metroid_prime_items/helper/startup_helper.dart';
 import 'package:metroid_prime_items/model/metroid_preferences.dart';
 import 'package:metroid_prime_items/ui/ItemTypeUI.dart';
@@ -11,7 +13,9 @@ import 'dart:io' show Platform;
 
 
 class MetroidHome extends StatefulWidget {
-  const MetroidHome({Key? key}) : super(key: key);
+  MetroidHome({Key? key}) : super(key: key);
+  final mpController = Get.put(MetroidController());
+
 
   @override
   State<MetroidHome> createState() => _MetroidHomeState();
@@ -72,6 +76,9 @@ class _MetroidHomeState extends State<MetroidHome> {
         ],
       ),
       drawer: NavBar(),
+        onDrawerChanged: (isOpen){
+          widget.mpController.updateIsDrawerOpen(isOpen);
+        },
       body: FutureBuilder(
         builder: (context, snapshot){
           if (snapshot.connectionState == ConnectionState.done) {
