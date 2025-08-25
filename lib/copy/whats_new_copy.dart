@@ -5,11 +5,9 @@ class WhatsNewCopy{
 
   static String getLatestVersionCopy(){
     return
-        "### Version 1.5.0 \n"
+        "### Version 1.5.1 \n"
         "\n"
-
-        "* Trigger a prompt when 100% completion is reached! \n"
-        "* Update to target OS versions \n"
+            "* Update to target OS versions \n"
             "* Update to latest library versions \n"
         "* (see full details in version history)\n\n"
         "${getFooter()}";
@@ -31,10 +29,8 @@ class WhatsNewCopy{
         child: const Markdown(
           physics: ClampingScrollPhysics(),
             data:
-            "### Latest: Version 1.5.0 \n"
+            "### Latest: Version 1.5.1 \n"
                 "\n"
-
-                "* Trigger a prompt when 100% completion is reached! \n"
                 "* Update to target OS versions \n"
                 "* Update to latest library versions \n"
                 " --- \n\n "
